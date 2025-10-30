@@ -14,19 +14,21 @@ class Plataforma(models.Model):
     def __str__(self):
         return self.nombre
     
+
 class Juego(models.Model):
     nombre = models.CharField(max_length=100, unique=True)
     companyia = models.CharField(max_length=50, blank=True, null=True)
     fecha_lanzamiento = models.DateField()
     logo = models.URLField(blank=True, null=True)
-    PEGI = models.IntegerField(max_length=2, blank=True, null=True)  # Edad recomendad
+    PEGI = models.IntegerField(blank=True, null=True)  # Edad recomendada
 
     class Meta:
-        verbose_name = "Plataforma"
-        verbose_name_plural = "Plataformas"
+        verbose_name = "Juego"
+        verbose_name_plural = "Juegos"
 
     def __str__(self):
         return self.nombre
+    
     
 class Jugador(models.Model):
     nombre = models.CharField(max_length=100, unique=True)
@@ -38,8 +40,8 @@ class Jugador(models.Model):
     año_nacimiento = models.DateField()
 
     class Meta:
-        verbose_name = "Jogador"
-        verbose_name_plural = "Jogadores"
+        verbose_name = "Jugador"
+        verbose_name_plural = "Jugadores"
 
     def __str__(self):
         return self.apodo
