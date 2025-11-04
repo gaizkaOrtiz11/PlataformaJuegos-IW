@@ -9,7 +9,7 @@ def home(request):
 def lista_plataformas(request):
     plataformas = Plataforma.objects.order_by("fecha_lanzamiento")
     nombres_empresas =','.join([plataforma.companyia for plataforma in plataformas if plataforma.companyia])
-    return render(request, "lista_plataformas.html", {"plataformas": plataformas, "nombres_empresas": nombres_empresas})
+    return render(request, "plataforma/lista_plataformas.html", {"plataformas": plataformas, "nombres_empresas": nombres_empresas})
 
 def detalle_plataforma(request, plataforma_id):
     plataforma = Plataforma.objects.get(id=plataforma_id)
