@@ -1,0 +1,14 @@
+<h1> Juegos de la plataforma {% plataforma.nombre %}</h1>
+
+{% for juego in juegos %}
+
+    <h2>{{ juego.nombre }}</h2>
+    <p>{{ juego.companyia }}</p>
+    <p>{{ juego.fecha_lanzamiento }}</p>
+    <p>{{ juego.PEGI }}</p>
+
+    <img src="{{juego.logo}}" alt="logo juego" width="100px" height="100px">
+
+    <a href="{% url 'detalle_juego' juego.id %}">Click aqui para ver el detalle de {{juego.nombre}}</a>
+
+{% endfor %}
