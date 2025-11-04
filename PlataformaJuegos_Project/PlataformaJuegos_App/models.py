@@ -32,11 +32,12 @@ class Juego(models.Model):
 class Jugador(models.Model):
     nombre = models.CharField(max_length=100, unique=True)
     apodo = models.CharField(max_length=100)
+    foto_cara = models.URLField(blank=True, null=True)
     descripcion = models.CharField(max_length=800, blank=True, null=True)
     es_profesional = models.BooleanField()
     equipo = models.CharField(max_length=50, blank=True, null=True)
     logo_equipo = models.URLField(blank=True, null=True)
-    año_nacimiento = models.DateField()
+    anyo_nacimiento = models.DateField()
 
     class Meta:
         verbose_name = "Jugador"

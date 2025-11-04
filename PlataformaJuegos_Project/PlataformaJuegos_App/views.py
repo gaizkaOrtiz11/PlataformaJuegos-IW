@@ -42,17 +42,19 @@ def detalle_jugador(request, jugador_id):
     jugador = Jugador.objects.get(id=jugador_id)
     nombre = jugador.nombre
     apodo = jugador.apodo
+    foto_cara = jugador.foto_cara
     descripcion = jugador.descripcion
     es_profesional = jugador.es_profesional
     equipo = jugador.equipo
     logo_equipo = jugador.logo_equipo if jugador.logo_equipo else None
-    año_nacimiento = jugador.año_nacimiento
+    anyo_nacimiento = jugador.anyo_nacimiento
     return render(request, "jugador/detalle_jugador.html", {
         "nombre": nombre,
         "apodo": apodo,
         "descripcion": descripcion,
+        "foto_cara": foto_cara,
         "es_profesional": es_profesional,
         "equipo": equipo,
         "logo_equipo": logo_equipo,
-        "año_nacimiento": año_nacimiento
+        "año_nacimiento": anyo_nacimiento
     })
