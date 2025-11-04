@@ -6,9 +6,10 @@
     <p>{{ jugador.apodo }}</p>
     <p>{{ jugador.descripcion }}</p>
     <p>{{ jugador.año_nacimiento }}</p>
-
-    <!-- <img src="{{jugador.logo_equipo}}" alt="logo equipo" width="100px" height="100px"> -->
-
+    {% if jugador.es_profesional %}
+        <p>{{ jugador.equipo }}</p>
+        <img src="{{jugador.logo_equipo}}" alt="logo equipo" width="100px" height="100px">
+    {% endif %}
     <a href="{% url 'detalle_jugador' jugador.id %}">Click aqui para ver el detalle de {{jugador.nombre}}</a>
 
 {% endfor %}
