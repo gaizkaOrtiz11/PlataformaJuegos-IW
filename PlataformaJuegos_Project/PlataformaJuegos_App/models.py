@@ -29,7 +29,6 @@ class Juego(models.Model):
     def __str__(self):
         return self.nombre
     
-    
 class Jugador(models.Model):
     nombre = models.CharField(max_length=100, unique=True)
     apodo = models.CharField(max_length=100)

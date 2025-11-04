@@ -9,7 +9,6 @@ def home(request):
 def lista_plataformas(request):
     plataformas = Plataforma.objects.order_by("fecha_lanzamiento")
     nombres_empresas =','.join([plataforma.companyia for plataforma in plataformas if plataforma.companyia])
-    nombres_plataformas =','.join([plataforma.companyia for plataforma in plataformas])
     return render(request, "lista_plataformas.html", {"plataformas": plataformas, "nombres_empresas": nombres_empresas})
 
 def detalle_plataforma(request, plataforma_id):
@@ -57,4 +56,3 @@ def detalle_jugador(request, jugador_id):
         "logo_equipo": logo_equipo,
         "año_nacimiento": año_nacimiento
     })
-    return render(request, "plataforma/detalle_plataforma.html", {"nombre": nombre, "logo": logo, "companyia": companyia})
