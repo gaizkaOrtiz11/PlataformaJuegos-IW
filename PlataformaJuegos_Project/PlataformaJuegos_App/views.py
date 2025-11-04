@@ -16,13 +16,13 @@ def detalle_plataforma(request, plataforma_id):
     nombre = plataforma.nombre
     logo = plataforma.logo if plataforma.logo else None
     companyia = plataforma.companyia
-    return render(request, "detalle_plataforma.html", {"nombre": nombre, "logo": logo, "companyia": companyia})
+    return render(request, "plataforma/detalle_plataforma.html", {"nombre": nombre, "logo": logo, "companyia": companyia})
 
 
 def lista_juegos(request):
     juegos = Juego.objects.order_by("nombre")
     nombres_empresas = ','.join([juego.companyia for juego in juegos if juego.companyia])
-    return render(request, "lista_juegos.html", {"juegos": juegos, "nombres_empresas": nombres_empresas})
+    return render(request, "juego/lista_juegos.html", {"juegos": juegos, "nombres_empresas": nombres_empresas})
 
 def detalle_juego(request, juego_id):
     juego = Juego.objects.get(id=juego_id)
@@ -30,13 +30,13 @@ def detalle_juego(request, juego_id):
     logo = juego.logo if juego.logo else None
     companyia = juego.companyia
     pegi = juego.PEGI
-    return render(request, "detalle_juego.html", {"nombre": nombre, "logo": logo, "companyia": companyia, "pegi": pegi})
+    return render(request, "juego/detalle_juego.html", {"nombre": nombre, "logo": logo, "companyia": companyia, "pegi": pegi})
 
 
 def lista_jugadores(request):
     jugadores = Jugador.objects.order_by("apodo")
     apodos = ','.join([jugador.apodo for jugador in jugadores if jugador.apodo])
-    return render(request, "lista_jugadores.html", {"jugadores": jugadores, "apodos": apodos})
+    return render(request, "jugador/lista_jugadores.html", {"jugadores": jugadores, "apodos": apodos})
 
 def detalle_jugador(request, jugador_id):
     jugador = Jugador.objects.get(id=jugador_id)
@@ -47,7 +47,7 @@ def detalle_jugador(request, jugador_id):
     equipo = jugador.equipo
     logo_equipo = jugador.logo_equipo if jugador.logo_equipo else None
     año_nacimiento = jugador.año_nacimiento
-    return render(request, "detalle_jugador.html", {
+    return render(request, "jugador/detalle_jugador.html", {
         "nombre": nombre,
         "apodo": apodo,
         "descripcion": descripcion,
