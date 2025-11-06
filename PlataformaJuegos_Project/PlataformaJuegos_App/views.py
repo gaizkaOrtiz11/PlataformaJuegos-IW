@@ -11,12 +11,16 @@ def lista_plataformas(request):
     nombres_empresas =','.join([plataforma.companyia for plataforma in plataformas if plataforma.companyia])
     return render(request, "plataforma/lista_plataformas.html", {"plataformas": plataformas, "nombres_empresas": nombres_empresas})
 
-def detalle_plataforma(request, plataforma_id):
-    plataforma = Plataforma.objects.get(id=plataforma_id)
+def detalle_plataforma(request, pk):
+    plataforma = Plataforma.objects.get(id=pk)
     nombre = plataforma.nombre
     logo = plataforma.logo if plataforma.logo else None
     companyia = plataforma.companyia
-    return render(request, "plataforma/detalle_plataforma.html", {"nombre": nombre, "logo": logo, "companyia": companyia})
+    return render(request, "plataforma/detalle_plataformas.html", {
+        "nombre": nombre,
+        "logo": logo,
+        "companyia": companyia
+    })
 
 
 def lista_juegos(request):
