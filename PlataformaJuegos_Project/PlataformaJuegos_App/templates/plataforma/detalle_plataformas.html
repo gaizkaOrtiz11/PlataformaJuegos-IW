@@ -1,0 +1,14 @@
+<h1>{{ juego.nombre }}</h1>
+
+<p><strong>Ciudad:</strong> {{ equipo.ciudad }}</p>
+<p><strong>Estadio:</strong> {{ equipo.estadio }}</p>
+
+{% if equipo.liga %}
+<p><strong>Liga:</strong> 
+    <a href="{% url 'detalle_liga' equipo.liga.id %}">
+        {{ equipo.liga.nombre }}
+    </a>
+</p>
+{% endif %}
+
+<a href="{% url 'lista_equipos' %}">Volver al listado de equipos</a>
