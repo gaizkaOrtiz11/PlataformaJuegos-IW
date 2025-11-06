@@ -16,11 +16,8 @@ def detalle_plataforma(request, pk):
     nombre = plataforma.nombre
     logo = plataforma.logo if plataforma.logo else None
     companyia = plataforma.companyia
-    return render(request, "plataforma/detalle_plataformas.html", {
-        "nombre": nombre,
-        "logo": logo,
-        "companyia": companyia
-    })
+    return render(request, "plataforma/detalle_plataformas.html",{"plataforma": plataforma}
+    )
 
 
 def lista_juegos(request):
