@@ -13,12 +13,8 @@ def lista_plataformas(request):
 
 def detalle_plataforma(request, pk):
     plataforma = Plataforma.objects.get(id=pk)
-    nombre = plataforma.nombre
-    logo = plataforma.logo if plataforma.logo else None
-    companyia = plataforma.companyia
-    return render(request, "plataforma/detalle_plataformas.html",{"plataforma": plataforma}
+    return render(request, "plataforma/detalle_plataformas.html", {"plataforma": plataforma}
     )
-
 
 def lista_juegos(request):
     juegos = Juego.objects.order_by("nombre")
@@ -27,11 +23,7 @@ def lista_juegos(request):
 
 def detalle_juego(request, pk):
     juego = Juego.objects.get(id=pk)
-    nombre = juego.nombre
-    logo = juego.logo if juego.logo else None
-    companyia = juego.companyia
-    pegi = juego.PEGI
-    return render(request, "juego/detalle_juegos.html", {"nombre": nombre, "logo": logo, "companyia": companyia, "pegi": pegi})
+    return render(request, "juego/detalle_juegos.html", {"juego": juego})
 
 
 def lista_jugadores(request):
@@ -41,21 +33,4 @@ def lista_jugadores(request):
 
 def detalle_jugador(request, pk):
     jugador = Jugador.objects.get(id=pk)
-    nombre = jugador.nombre
-    apodo = jugador.apodo
-    foto_cara = jugador.foto_cara
-    descripcion = jugador.descripcion
-    es_profesional = jugador.es_profesional
-    equipo = jugador.equipo
-    logo_equipo = jugador.logo_equipo if jugador.logo_equipo else None
-    anyo_nacimiento = jugador.anyo_nacimiento
-    return render(request, "jugador/detalle_jugador.html", {
-        "nombre": nombre,
-        "apodo": apodo,
-        "descripcion": descripcion,
-        "foto_cara": foto_cara,
-        "es_profesional": es_profesional,
-        "equipo": equipo,
-        "logo_equipo": logo_equipo,
-        "año_nacimiento": anyo_nacimiento
-    })
+    return render(request, "jugador/detalle_jugador.html", {"jugador": jugador})
