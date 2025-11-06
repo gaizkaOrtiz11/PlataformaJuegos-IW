@@ -1,13 +1,12 @@
-<!-- <h1> Plataformas de juegos</h1>
-
-{% for plataforma in plataformas %}
-
-    <h2>{{ plataforma.nombre }}</h2>
-    <p>{{ plataforma.companyia }}</p>
-    <p>{{ plataforma.fecha_lanzamiento }}</p>
-
-    <img src="{{plataforma.logo}}" alt="logo plataforma" width="100px" height="100px">
-
-    <a href="{% url 'detalle_plataforma' plataforma.id %}">Click aqui para ver el detalle de {{liga.nombre}}</a>
-
-{% endfor %} -->
+<h1>Pagina de plataformas de videojuegos</h1>
+<ul>
+    <li>
+        <a href="{% url 'lista_plataformas' lista_plataformas.id %}">Click aqui para ver la lista de plataformas</a>
+    </li>
+    <li>
+        <a href="{% url 'lista_juegos' lista_juegos.id %}">Click aqui para ver la lista de juegos</a>
+    </li>
+    <li>
+        <a href="{% url 'lista_jugadores' lista_jugadores.id %}">Click aqui para ver la lista de jugadores</a>
+    </li>
+</ul>
