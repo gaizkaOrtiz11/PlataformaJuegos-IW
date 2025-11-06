@@ -1,0 +1,12 @@
+<h1>{{jugador.nombre}}</h1>
+
+<img src="{{jugador.foto_cara}}" alt="foto del jugador" width="150px" height="150px">
+
+<p><strong>Apodo: </strong>{{jugador.apodo}}</p>
+<p><strong>Descripcion: </strong>{{jugador.descripcion}}</p>
+<p><strong>Año de nacimiento: </strong>{{jugador.anyo_nacimiento}}</p>
+
+{% if jugador.es_profesional %}
+    <p><strong>Equipo: </strong>{{jugador.equipo}}</p>
+    <img src="{{jugador.logo_equipo}}" alt="logo equipo" width="150px" height="150px">
+{% endif %}
