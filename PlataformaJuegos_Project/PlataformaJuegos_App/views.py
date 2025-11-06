@@ -28,13 +28,13 @@ def lista_juegos(request):
     nombres_empresas = ','.join([juego.companyia for juego in juegos if juego.companyia])
     return render(request, "juego/lista_juegos.html", {"juegos": juegos, "nombres_empresas": nombres_empresas})
 
-def detalle_juego(request, juego_id):
-    juego = Juego.objects.get(id=juego_id)
+def detalle_juego(request, pk):
+    juego = Juego.objects.get(id=pk)
     nombre = juego.nombre
     logo = juego.logo if juego.logo else None
     companyia = juego.companyia
     pegi = juego.PEGI
-    return render(request, "juego/detalle_juego.html", {"nombre": nombre, "logo": logo, "companyia": companyia, "pegi": pegi})
+    return render(request, "juego/detalle_juegos.html", {"nombre": nombre, "logo": logo, "companyia": companyia, "pegi": pegi})
 
 
 def lista_jugadores(request):
@@ -42,8 +42,8 @@ def lista_jugadores(request):
     apodos = ','.join([jugador.apodo for jugador in jugadores if jugador.apodo])
     return render(request, "jugador/lista_jugadores.html", {"jugadores": jugadores, "apodos": apodos})
 
-def detalle_jugador(request, jugador_id):
-    jugador = Jugador.objects.get(id=jugador_id)
+def detalle_jugador(request, pk):
+    jugador = Jugador.objects.get(id=pk)
     nombre = jugador.nombre
     apodo = jugador.apodo
     foto_cara = jugador.foto_cara
