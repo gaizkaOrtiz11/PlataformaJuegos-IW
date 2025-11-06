@@ -21,6 +21,9 @@ class Juego(models.Model):
     fecha_lanzamiento = models.DateField()
     logo = models.URLField(blank=True, null=True)
     PEGI = models.IntegerField(blank=True, null=True)  # Edad recomendada
+    plataforma = models.ForeignKey(Plataforma,
+                                   on_delete=models.CASCADE,
+                                   related_name="juegos")
 
     class Meta:
         verbose_name = "Juego"
@@ -38,6 +41,9 @@ class Jugador(models.Model):
     equipo = models.CharField(max_length=50, blank=True, null=True)
     logo_equipo = models.URLField(blank=True, null=True)
     anyo_nacimiento = models.DateField()
+    juego = models.ForeignKey(Juego,
+                              on_delete=models.CASCADE,
+                              related_name="jugadores")
 
     class Meta:
         verbose_name = "Jugador"
