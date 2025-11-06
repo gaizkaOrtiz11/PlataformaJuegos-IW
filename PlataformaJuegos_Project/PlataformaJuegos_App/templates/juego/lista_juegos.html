@@ -1,4 +1,4 @@
-<h1> Juegos de la plataforma {% plataforma.nombre %}</h1>
+<h1>Juegos</h1>
 
 {% for juego in juegos %}
 
@@ -7,8 +7,8 @@
     <p>{{ juego.fecha_lanzamiento }}</p>
     <p>{{ juego.PEGI }}</p>
 
-    <img src="{{juego.logo}}" alt="logo juego" width="100px" height="100px">
+    <img src="{{ juego.logo }}" alt="logo juego" width="100" height="100">
 
-    <a href="{% url 'detalle_juego' juego.id %}">Click aqui para ver el detalle de {{juego.nombre}}</a>
-
+{% empty %}
+    <p>No hay juegos.</p>
 {% endfor %}

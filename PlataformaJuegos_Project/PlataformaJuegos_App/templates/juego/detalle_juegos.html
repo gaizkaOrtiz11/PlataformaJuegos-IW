@@ -1,0 +1,30 @@
+<h1>{{ juego.nombre }}</h1>
+
+<p><strong>Compañia:</strong> {{ juego.companyia }}</p>
+<p><strong>Fecha lanzamiento:</strong> {{ juego.fecha_lanzamiento }}</p>
+<p><strong>PEGI:</strong> {{ juego.PEGI }}</p>
+
+<img src="{{ juego.logo}}" alt="logo" width="500px">
+
+{% if juego.plataforma %}
+<p><strong>Plataforma:</strong> 
+    <a href="{% url 'detalle_plataforma' equipo.plataforma.id %}">
+        {{ juego.plataforma.nombre }}
+    </a>
+</p>
+{% endif %}
+
+<a href="{% url 'lista_plataformas' %}">Volver al listado de plataformas</a><h1>Juegos</h1>
+
+{% for juego in juegos %}
+
+    <h2>{{ juego.nombre }}</h2>
+    <p>{{ juego.companyia }}</p>
+    <p>{{ juego.fecha_lanzamiento }}</p>
+    <p>{{ juego.PEGI }}</p>
+
+    <img src="{{ juego.logo }}" alt="logo juego" width="100" height="100">
+
+{% empty %}
+    <p>No hay juegos.</p>
+{% endfor %}
