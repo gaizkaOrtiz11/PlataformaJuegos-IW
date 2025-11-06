@@ -11,6 +11,7 @@
         <img src="{{jugador.logo_equipo}}" alt="logo equipo" width="100px" height="100px">
     {% endif %}
     <a href="{% url 'detalle_jugador' jugador.id %}">Click aqui para ver el detalle de {{jugador.nombre}}</a>
+    <a href="{% url 'home' %}"> Volver atrás </a>
 
 {% empty %}
     <p>No hay Jugadores.</p>
