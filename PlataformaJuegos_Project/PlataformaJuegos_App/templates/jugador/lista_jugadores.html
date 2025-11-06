@@ -12,4 +12,6 @@
     {% endif %}
     <a href="{% url 'detalle_jugador' jugador.id %}">Click aqui para ver el detalle de {{jugador.nombre}}</a>
 
+{% empty %}
+    <p>No hay Jugadores.</p>
 {% endfor %}
