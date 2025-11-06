@@ -1,0 +1,17 @@
+<h1>{{ juego.nombre }}</h1>
+
+<p><strong>Compañia:</strong> {{ juego.companyia }}</p>
+<p><strong>Fecha lanzamiento:</strong> {{ juego.fecha_lanzamiento }}</p>
+<p><strong>PEGI:</strong> {{ juego.PEGI }}</p>
+
+<img src="{{ juego.logo}}" alt="logo" width="500px">
+
+{% if juego.plataforma %}
+<p><strong>Plataforma:</strong> 
+    <a href="{% url 'detalle_plataforma' equipo.plataforma.id %}">
+        {{ juego.plataforma.nombre }}
+    </a>
+</p>
+{% endif %}
+
+<a href="{% url 'lista_plataformas' %}">Volver al listado de plataformas</a>
