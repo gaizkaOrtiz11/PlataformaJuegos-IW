@@ -6,7 +6,11 @@
 <p><strong>Descripcion: </strong>{{jugador.descripcion}}</p>
 <p><strong>Año de nacimiento: </strong>{{jugador.anyo_nacimiento}}</p>
 
+
 {% if jugador.es_profesional %}
     <p><strong>Equipo: </strong>{{jugador.equipo}}</p>
     <img src="{{jugador.logo_equipo}}" alt="logo equipo" width="150px" height="150px">
+
+<a href="{% url 'lista_jugadores' %}">Volver al listado de jugadores</a>
+
 {% endif %}

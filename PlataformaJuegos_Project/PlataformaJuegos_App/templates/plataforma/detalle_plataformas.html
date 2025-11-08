@@ -1,14 +1,8 @@
-<h1>{{ juego.nombre }}</h1>
+<h1>{{plataforma.nombre}}</h1>
 
-<p><strong>Ciudad:</strong> {{ equipo.ciudad }}</p>
-<p><strong>Estadio:</strong> {{ equipo.estadio }}</p>
+<p><strong>Compañia: </strong>{{plataforma.companyia}}</p>
+<p><strong>Fecha de fundacion: </strong>{{plataforma.fecha_lanzamiento}}</p>
 
-{% if equipo.liga %}
-<p><strong>Liga:</strong> 
-    <a href="{% url 'detalle_liga' equipo.liga.id %}">
-        {{ equipo.liga.nombre }}
-    </a>
-</p>
-{% endif %}
+<img src="{{plataforma.logo}}" alt="logo de la plataforma" width="150px" height="150px">
 
-<a href="{% url 'lista_equipos' %}">Volver al listado de equipos</a>
+<a href="{% url 'lista_plataformas' %}">Volver al listado de plataformas</a>

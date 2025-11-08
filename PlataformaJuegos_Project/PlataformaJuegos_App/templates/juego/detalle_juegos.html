@@ -4,27 +4,16 @@
 <p><strong>Fecha lanzamiento:</strong> {{ juego.fecha_lanzamiento }}</p>
 <p><strong>PEGI:</strong> {{ juego.PEGI }}</p>
 
-<img src="{{ juego.logo}}" alt="logo" width="500px">
+<img src="{{ juego.logo }}" alt="logo" width="500px">
 
 {% if juego.plataforma %}
-<p><strong>Plataforma:</strong> 
-    <a href="{% url 'detalle_plataforma' equipo.plataforma.id %}">
+<p><strong>Plataforma:</strong>
+    <a href="{% url 'detalle_plataforma' juego.plataforma.pk %}">
         {{ juego.plataforma.nombre }}
     </a>
 </p>
+{% else %}
+<p><strong>Plataforma:</strong> (No asignada)</p>
 {% endif %}
 
-<a href="{% url 'lista_plataformas' %}">Volver al listado de plataformas</a><h1>Juegos</h1>
-
-{% for juego in juegos %}
-
-    <h2>{{ juego.nombre }}</h2>
-    <p>{{ juego.companyia }}</p>
-    <p>{{ juego.fecha_lanzamiento }}</p>
-    <p>{{ juego.PEGI }}</p>
-
-    <img src="{{ juego.logo }}" alt="logo juego" width="100" height="100">
-
-{% empty %}
-    <p>No hay juegos.</p>
-{% endfor %}
+<a href="{% url 'lista_juegos' %}">Volver al listado de juegos</a>
