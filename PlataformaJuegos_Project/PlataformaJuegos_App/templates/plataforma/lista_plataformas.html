@@ -6,7 +6,7 @@
 <h2> {{ plataforma.nombre }} </h2>
 <p> Pertenece la compañia {{plataforma.companyia}}</p>
 
-<a href="{% url 'detalle_plataforma' plataforma.id %}"> Click aqui para ver el detalle de {{plataforma.nombre}} </a>
+<a href="{% url 'detalle_plataforma' plataforma.pk %}"> Click aqui para ver el detalle de {{plataforma.nombre}} </a>
 
 <img src="{{plataforma.logo}}" alt="logo de la plataforma" width="100px">
 

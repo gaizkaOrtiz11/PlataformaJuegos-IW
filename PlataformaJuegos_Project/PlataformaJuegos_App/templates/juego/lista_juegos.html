@@ -9,7 +9,7 @@
 
     <img src="{{ juego.logo }}" alt="logo juego" width="100" height="100">
 
-    <a href="{% url 'detalle_juego' juego.id %}"> Click aqui para ver el detalle de {{juego.nombre}} </a>
+    <a href="{% url 'detalle_juego' juego.pk %}"> Click aqui para ver el detalle de {{juego.nombre}} </a>
     <a href="{% url 'home' %}"> Volver atrás </a>
 
 
