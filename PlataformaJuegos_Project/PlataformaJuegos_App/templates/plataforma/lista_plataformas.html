@@ -10,9 +10,9 @@
 
 <img src="{{plataforma.logo}}" alt="logo de la plataforma" width="100px">
 
-<a href="{% url 'home' %}"> Volver atrás </a>
-
-
 {% empty %}
     <p>No hay Plataformas.</p>
 {% endfor %}
+
+<br><br>
+<a href="{% url 'home' %}"> Volver atrás </a>
