@@ -17,7 +17,7 @@ class Plataforma(models.Model):
 
 class Juego(models.Model):
     nombre = models.CharField(max_length=100, unique=True)
-    companyia = models.CharField(max_length=50, blank=True, null=True)
+    companyia = models.CharField(max_length=51, blank=True, null=True)
     fecha_lanzamiento = models.DateField()
     logo = models.URLField(blank=True, null=True)
     PEGI = models.IntegerField(blank=True, null=True)  # Edad recomendada
