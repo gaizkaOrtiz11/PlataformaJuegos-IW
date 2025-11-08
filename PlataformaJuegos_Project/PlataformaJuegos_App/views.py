@@ -20,7 +20,8 @@ def detalle_plataforma(request, pk):
 def lista_juegos(request):
     juegos = Juego.objects.order_by("nombre")
     nombres_empresas = ','.join([juego.companyia for juego in juegos if juego.companyia])
-    return render(request, "juego/lista_juegos.html", {"juegos": juegos, "nombres_empresas": nombres_empresas})
+    plataformas = Juego.plataformas.all()
+    return render(request, "juego/lista_juegos.html", {"juegos": juegos, "nombres_empresas": nombres_empresas, "plataformas": plataformas})
 
 def detalle_juego(request, pk):
     juego = Juego.objects.get(id=pk)

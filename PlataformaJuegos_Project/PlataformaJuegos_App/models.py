@@ -21,8 +21,7 @@ class Juego(models.Model):
     fecha_lanzamiento = models.DateField()
     logo = models.URLField(blank=True, null=True)
     PEGI = models.IntegerField(blank=True, null=True)  # Edad recomendada
-    plataforma = models.ForeignKey(Plataforma,
-                                   on_delete=models.CASCADE,
+    plataformas = models.ManyToManyField(Plataforma,
                                    related_name="juegos",
                                    null=True,
                                    blank=True)

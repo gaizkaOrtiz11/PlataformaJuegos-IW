@@ -6,12 +6,15 @@
 
 <img src="{{ juego.logo }}" alt="logo" width="500px">
 
-{% if juego.plataforma %}
-<p><strong>Plataforma:</strong>
-    <a href="{% url 'detalle_plataforma' juego.plataforma.pk %}">
-        {{ juego.plataforma.nombre }}
+{% if juego.plataformas %}
+<p><strong>Plataformas:</strong> </p>
+{% for plataforma in plataformas %}
+<li>
+    <a href="{% url 'detalle_plataforma' plataforma.pk %}">
+        {{ plataforma.nombre }}
     </a>
-</p>
+</li>
+{%endfor%}
 {% else %}
 <p><strong>Plataforma:</strong> (No asignada)</p>
 {% endif %}
