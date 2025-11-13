@@ -54,7 +54,7 @@
                             <!-- ***** Logo End ***** -->
                             <!-- ***** Menu Start ***** -->
                             <ul class="nav">
-                                <li><a href="{% url 'home' %}" class="active">Home</a></li>
+                                <li><a href="{% url 'home' %}" class="active">Inicio</a></li>
                                 <li><a href="{% url 'lista_plataformas' %}">Plataformas</a></li>
                                 <li><a href="{% url 'lista_juegos' %}">Juegos</a></li>
                                 <li><a href="{% url 'lista_jugadores' %}">Jugadores</a></li>
@@ -73,7 +73,7 @@
 
         <!-- Contenido principal que rellenan las plantillas hijas -->
         <main>
-            {% block content %}
+            {% block index %}
             {% endblock %}
         </main>
 
