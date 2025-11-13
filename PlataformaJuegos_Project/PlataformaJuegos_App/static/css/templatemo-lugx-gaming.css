@@ -285,14 +285,13 @@ Header Style
 */
 
 .background-header {
-  background-color: #0071f8 !important;
-  border-radius: 0px 0px 25px 25px;
+  /* degradado azul -> transparente (arriba -> abajo) */
+  background: linear-gradient(180deg, #0071f8 0%, rgba(0,113,248,0) 100%) !important;
   height: 80px!important;
   position: fixed!important;
   top: 0!important;
   left: 0;
   right: 0;
-  box-shadow: 0px 0px 10px rgba(0,0,0,0.15)!important;
   -webkit-transition: all .5s ease 0s;
   -moz-transition: all .5s ease 0s;
   -o-transition: all .5s ease 0s;
@@ -651,7 +650,7 @@ Banner Style
 */
 
 .main-banner {
-  background-image: url(../images/banner-bg.jpg);
+  background-image: url(../assets/images/banner-bg.jpg);
   border-radius: 0px 0px 150px 150px;
   background-position: center bottom;
   background-repeat: no-repeat;
@@ -678,7 +677,7 @@ Banner Style
 
 .main-banner .caption h2:after {
   position: absolute;
-  background-image: url(../images/caption-dec.png);
+  background-image: url(../assets/images/caption-dec.png);
   width: 202px;
   height: 12px;
   content: '';
@@ -1019,7 +1018,7 @@ CTA Style
 }
 
 .cta::after {
-  background-image: url(../images/cta-bg.jpg);
+  background-image: url(../assets/images/cta-bg.jpg);
   max-width: 550px;
   max-height: 510px;
   width: 100%;
@@ -1116,9 +1115,8 @@ footer {
   background-color: #0071f8;
   background-repeat: no-repeat;
   background-size: cover;
-  background-image: url(../images/footer-bg.jpg);
+  background-image: url(../assets/images/footer-bg.jpg);
   min-height: 150px;
-  border-radius: 150px 150px 0px 0px;
 }
 
 footer p {
@@ -1148,7 +1146,8 @@ Page Header Style
 */
 
 .page-heading {
-  background-image: url(../images/page-heading-bg.jpg);
+  /* degradado semi-opaco sobre la imagen de fondo (de arriba a abajo) */
+  background-image: linear-gradient(to bottom, rgba(0,113,248,0.9), rgba(0,113,248,0)), url(../assets/images/page-heading-bg.jpg);
   border-radius: 0px 0px 150px 150px;
   background-position: center bottom;
   background-repeat: no-repeat;
