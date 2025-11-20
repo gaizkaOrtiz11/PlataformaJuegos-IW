@@ -1138,13 +1138,13 @@ footer {
 }
 
 .footer-section a {
-  color: #212529;
+  color: white;
   text-decoration: none;
 }
 
 .footer-section h3 {
   margin-bottom: 1rem;
-  color: #212529;
+  color: white;
 }
 
 .footer-section ul {
@@ -1153,7 +1153,7 @@ footer {
 
 .footer-section li {
   margin-bottom: 0.5rem;
-  color: #212529;
+  color: white;
 }
 
 .footer-section a:hover {
