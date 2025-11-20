@@ -76,16 +76,41 @@
             {% block index %}
             {% endblock %}
         </main>
-
-        <footer>
-            <div class="container">
-                <div class="col-lg-12">
+        
+    <!-- Footer común -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-section">
+                <h3>Enlaces rápidos</h3>
+                <ul>
+                    <li><a href="lista_plataformas.html">Plataformas</a></li>
+                    <li><a href="lista_juegos.html"></a>Juegos</li>
+                    <li><a href="lista_jugadores.html">Jugadores</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Contacto</h3>
+                <ul>
+                    <li>Email: info@luxG.com</li>
+                    <li>Teléfono: +34 912 34 56 78</li>
+                    <li>Dirección: Ave del paraiso, 7</li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Síguenos</h3>
+                <ul>
+                    <li><a href="https://x.com/?lang=es"><img src="static/assets/images/X-icon.jpg" alt="X" class="social-icon"> X</a></li>
+                    <li><a href="https://www.facebook.com/?locale=es_ES"><img src="static/assets/images/facebook-icon.jpg" alt="Facebook" class="social-icon"> Facebook</a></li>
+                    <li><a href="https://www.instagram.com/"><img src="static/assets/images/instagram-icon.jpg" alt="Instagram" class="social-icon"> Instagram</a></li>
+                </ul>
+            </div>
+            <div class="copyright">
                     <p>Copyright © 2048 LUGX Gaming Company. All rights reserved.
                         &nbsp;&nbsp; <a rel="nofollow" href="https://templatemo.com" target="_blank">Design: TemplateMo</a>
                     </p>
-                </div>
             </div>
-        </footer>
+        </div>
+    </footer>
 
         <!-- Scripts -->
         <script src="{% static 'vendor/jquery/jquery.min.js' %}"></script>
