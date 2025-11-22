@@ -26,7 +26,8 @@ def lista_juegos(request):
 
 def detalle_juego(request, pk):
     juego = Juego.objects.get(id=pk)
-    return render(request, "juego/detalle_juegos.html", {"juego": juego})
+    plataformas = juego.plataformas.all()
+    return render(request, "juego/detalle_juegos.html", {"juego": juego, "plataformas": plataformas})
 
 
 def lista_jugadores(request):
