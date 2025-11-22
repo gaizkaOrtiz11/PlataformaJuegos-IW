@@ -1,40 +1,78 @@
-from django.shortcuts import render, HttpResponse
+from django.views import View
+from django.views.generic import ListView, DetailView, TemplateView
+from django.shortcuts import render
 from .models import Plataforma, Juego, Jugador
 
-# Create your views here.
-def home(request):
-    return render(request, "index.html")
+
+class HomeView(TemplateView):
+    template_name = "index.html"
 
 
-def lista_plataformas(request):
-    plataformas = Plataforma.objects.order_by("fecha_lanzamiento")
-    nombres_empresas =','.join([plataforma.companyia for plataforma in plataformas if plataforma.companyia])
-    return render(request, "plataforma/lista_plataformas.html", {"plataformas": plataformas, "nombres_empresas": nombres_empresas})
-   
+class ListaPlataformasView(ListView):
+    model = Plataforma
+    template_name = "plataforma/lista_plataformas.html"
+    context_object_name = "plataformas"
+    ordering = "fecha_lanzamiento"
 
-def detalle_plataforma(request, pk):
-    plataforma = Plataforma.objects.get(id=pk)
-    return render(request, "plataforma/detalle_plataformas.html", {"plataforma": plataforma}
-    )
-
-def lista_juegos(request):
-    juegos = Juego.objects.order_by("nombre")
-    nombres_empresas = ','.join([juego.companyia for juego in juegos if juego.companyia])
-    juego = Juego.objects.get(id=1)
-    plataformas = juego.plataformas.all()
-    return render(request, "juego/lista_juegos.html", {"juegos": juegos, "nombres_empresas": nombres_empresas, "plataformas": plataformas})
-
-def detalle_juego(request, pk):
-    juego = Juego.objects.get(id=pk)
-    plataformas = juego.plataformas.all()
-    return render(request, "juego/detalle_juegos.html", {"juego": juego, "plataformas": plataformas})
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        plataformas = self.get_queryset()
+        context["nombres_empresas"] = ','.join([p.companyia for p in plataformas if p.companyia])
+        return context
 
 
-def lista_jugadores(request):
-    jugadores = Jugador.objects.order_by("apodo")
-    apodos = ','.join([jugador.apodo for jugador in jugadores if jugador.apodo])
-    return render(request, "jugador/lista_jugadores.html", {"jugadores": jugadores, "apodos": apodos})
+class DetallePlataformaView(DetailView):
+    model = Plataforma
+    template_name = "plataforma/detalle_plataformas.html"
+    context_object_name = "plataforma"
+    pk_url_kwarg = "pk"
 
-def detalle_jugador(request, pk):
-    jugador = Jugador.objects.get(id=pk)
-    return render(request, "jugador/detalle_jugador.html", {"jugador": jugador})
+
+class ListaJuegosView(ListView):
+    model = Juego
+    template_name = "juego/lista_juegos.html"
+    context_object_name = "juegos"
+    ordering = "nombre"
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        juegos = self.get_queryset()
+        context["nombres_empresas"] = ','.join([j.companyia for j in juegos if j.companyia])
+        try:
+            juego = Juego.objects.get(id=1)
+            context["plataformas"] = juego.plataformas.all()
+        except Juego.DoesNotExist:
+            context["plataformas"] = []
+        return context
+
+
+class DetalleJuegoView(DetailView):
+    model = Juego
+    template_name = "juego/detalle_juegos.html"
+    context_object_name = "juego"
+    pk_url_kwarg = "pk"
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context["plataformas"] = self.object.plataformas.all()
+        return context
+
+
+class ListaJugadoresView(ListView):
+    model = Jugador
+    template_name = "jugador/lista_jugadores.html"
+    context_object_name = "jugadores"
+    ordering = "apodo"
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        jugadores = self.get_queryset()
+        context["apodos"] = ','.join([j.apodo for j in jugadores if j.apodo])
+        return context
+
+
+class DetalleJugadorView(DetailView):
+    model = Jugador
+    template_name = "jugador/detalle_jugador.html"
+    context_object_name = "jugador"
+    pk_url_kwarg = "pk"

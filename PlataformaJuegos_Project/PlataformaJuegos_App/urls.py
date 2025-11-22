@@ -2,17 +2,18 @@ from django.urls import path
 from . import views
 
 urlpatterns = [
-    path("", views.home, name = "home"),
+    
+    path("", views.HomeView.as_view(), name = "home"),
 
-    path('plataformas/', views.lista_plataformas, name='lista_plataformas'),
+    path('plataformas/', views.ListaPlataformasView.as_view(), name='lista_plataformas'),
 
-    path('plataformas/<int:pk>', views.detalle_plataforma, name='detalle_plataforma'),
+    path('plataformas/<int:pk>/', views.DetallePlataformaView.as_view(), name='detalle_plataforma'),
 
-    path('juegos/', views.lista_juegos, name='lista_juegos'),
+    path('juegos/', views.ListaJuegosView.as_view(), name='lista_juegos'),
 
-    path('juegos/<int:pk>', views.detalle_juego, name='detalle_juego'),
+    path('juegos/<int:pk>/', views.DetalleJuegoView.as_view(), name='detalle_juego'),
 
-    path('jugadores/', views.lista_jugadores, name='lista_jugadores'),
+    path('jugadores/', views.ListaJugadoresView.as_view(), name='lista_jugadores'),
 
-    path('jugadores/<int:pk>', views.detalle_jugador, name='detalle_jugador')
+    path('jugadores/<int:pk>/', views.DetalleJugadorView.as_view(), name='detalle_jugador')
 ]
