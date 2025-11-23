@@ -115,13 +115,17 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.2/howto/static-files/
 
-STATIC_URL = 'static/'
-STATICFILES_DIRS = [BASE_DIR / "static",]  # Add this line to include CSS
+# URL desde donde se servirán los archivos estáticos
+STATIC_URL = '/static/'
+
+# Carpetas de estáticos para desarrollo (Django buscará aquí)
+STATICFILES_DIRS = [BASE_DIR / "static"]  # Asegúrate de crear la carpeta BASE_DIR/static
+
+# Carpeta donde Django colocará todos los archivos estáticos al ejecutar collectstatic
+STATIC_ROOT = BASE_DIR / 'staticfiles'  # Para producción
 
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.2/ref/settings/#default-auto-field
-
-
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
