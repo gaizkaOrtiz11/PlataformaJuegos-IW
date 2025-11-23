@@ -1172,8 +1172,13 @@ footer {
     text-align: center;
     margin-top: 1rem;
     padding-top: 1rem;
-    border-top: 1px solid rgb(52, 73, 94);
+    border-top: 1px solid white;
 }
+
+.copyright p {
+  color: #e7e7e7;
+}
+
 
 /* 
 ---------------------------------------------
