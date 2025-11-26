@@ -1,6 +1,6 @@
 {% load static %}
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
     <head>
 
@@ -10,23 +10,33 @@
 
         <title>{% block title %}Plataforma juegos{% endblock %}</title>
 
-        <!-- Bootstrap core CSS -->
+        <!-- BOOTSTRAP CORE CSS -->
         <link href="{% static 'vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
 
-        <!-- Additional CSS Files -->
+        <!-- CSS -->
         <link rel="stylesheet" href="{% static 'css/fontawesome.css' %}">
         <link rel="stylesheet" href="{% static 'css/templatemo-lugx-gaming.css' %}">
         <link rel="stylesheet" href="{% static 'css/owl.css' %}">
         <link rel="stylesheet" href="{% static 'css/animate.css' %}">
         <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css" />
         <link rel="stylesheet" href="{% static 'css/chatbot.css' %}">
-
         {% block head %}{% endblock %}
+
+        <!-- SCRIPTS -->
+        <script src="{% static 'vendor/jquery/jquery.min.js' %}"></script>
+        <script src="{% static 'vendor/bootstrap/js/bootstrap.min.js' %}"></script>
+        <script src="{% static 'assets/js/isotope.min.js' %}"></script>
+        <script src="{% static 'assets/js/owl-carousel.js' %}"></script>
+        <script src="{% static 'assets/js/counter.js' %}"></script>
+        <script src="{% static 'assets/js/custom.js' %}"></script>
+        <script src="{% static 'assets/js/chatbot_script.js' %}"></script>
+        <script src="{% static 'assets/js/apply_scraper.js' %}"></script>
+        {% block scripts %}{% endblock %}
     </head>
 
     <body>
 
-        <!-- ***** Preloader Start ***** -->
+        <!-- START PRELOADER -->
         <div id="js-preloader" class="js-preloader">
             <div class="preloader-inner">
                 <span class="dot"></span>
@@ -37,20 +47,19 @@
                 </div>
             </div>
         </div>
-        <!-- ***** Preloader End ***** -->
 
-        <!-- ***** Header Area Start ***** -->
+        <!-- HEADER -->
         <header class="header-area header-sticky">
             <div class="container">
                 <div class="row">
                     <div class="col-12">
                         <nav class="main-nav">
-                            <!-- ***** Logo Start ***** -->
+                            <!-- LOGO -->
                             <a href="{% url 'home' %}" class="logo">
                                 <img src="{% static 'assets/images/logo.png' %}" alt="DeustoGames Logo" style="width: 158px;">
                             </a>
-                            <!-- ***** Logo End ***** -->
-                            <!-- ***** Menu Start ***** -->
+
+                            <!-- MENU -->
                             <ul class="nav">
                                 <li><a href="{% url 'home' %}" >Inicio</a></li>
                                 <li><a href="{% url 'lista_plataformas' %}">Plataformas</a></li>
@@ -58,64 +67,63 @@
                                 <li><a href="{% url 'lista_jugadores' %}">Jugadores</a></li>
                                 <li><a href="#">Translate 🇪🇸</a></li>
                             </ul>
+
+                            <!-- MENU TRIGGER -->
                             <a class="menu-trigger">
                                 <span>Menu</span>
                             </a>
-                            <!-- ***** Menu End ***** -->
                         </nav>
                     </div>
                 </div>
             </div>
         </header>
-        <!-- ***** Header Area End ***** -->
 
-        <!-- Contenido principal que rellenan las plantillas hijas -->
+
+        <!-- MAIN -->
         <main>
             {% block index %}
             {% endblock %}
         </main>
         
-    <!-- Footer común -->
-    <footer>
-        <div class="footer-container">
-            <div class="footer-section">
-                <h3>Enlaces rápidos</h3>
-                <ul>
-                    <li><a href="{% url 'lista_plataformas' %}">Plataformas</a></li>
-                    <li><a href="{% url 'lista_juegos' %}">Juegos</a></li>
-                    <li><a href="{% url 'lista_jugadores' %}">Jugadores</a></li>
-                </ul>
-            </div>
-            <div class="footer-section">
-                <h3>Contacto</h3>
-                <ul>
-                    <li>Email: info@luxG.com</li>
-                    <li>Teléfono: +34 912 34 56 78</li>
-                    <li>Dirección: Ave del paraiso, 7</li>
-                </ul>
-            </div>
-            <div class="footer-section">
-                <h3>Síguenos</h3>
-                <ul>
-                    <li><a href="https://x.com/?lang=es"><img src="/static/assets/images/X-icon.jpg" alt="X" class="social-icon"> X</a></li>
-                    <li><a href="https://www.facebook.com/?locale=es_ES"><img src="/static/assets/images/facebook-icon.jpg" alt="Facebook" class="social-icon"> Facebook</a></li>
-                    <li><a href="https://www.instagram.com/"><img src="/static/assets/images/instagram-icon.jpg" alt="Instagram" class="social-icon"> Instagram</a></li>
-                </ul>
-            </div>
-            <div class="copyright">
-                    <p>Copyright © 2048 LUGX Gaming Company. All rights reserved.</p>
-            </div>
-        </div>
-    </footer>
 
-        <!-- Scripts -->
-        <script src="{% static 'vendor/jquery/jquery.min.js' %}"></script>
-        <script src="{% static 'vendor/bootstrap/js/bootstrap.min.js' %}"></script>
-        <script src="{% static 'assets/js/isotope.min.js' %}"></script>
-        <script src="{% static 'assets/js/owl-carousel.js' %}"></script>
-        <script src="{% static 'assets/js/counter.js' %}"></script>
-        <script src="{% static 'assets/js/custom.js' %}"></script>
-        <script src="{% static 'assets/js/chatbot_script.js' %}"></script>
-        {% block scripts %}{% endblock %}
+        <!-- FOOTER -->
+        <footer>
+            <div class="footer-container">
+                <!-- LEFT COLUMN-->
+                <div class="footer-section">
+                    <h3>Enlaces rápidos</h3>
+                    <ul>
+                        <li><a href="{% url 'lista_plataformas' %}">Plataformas</a></li>
+                        <li><a href="{% url 'lista_juegos' %}">Juegos</a></li>
+                        <li><a href="{% url 'lista_jugadores' %}">Jugadores</a></li>
+                    </ul>
+                </div>
+
+                <!-- CENTER COLUMN -->
+                <div class="footer-section">
+                    <h3>Contacto</h3>
+                    <ul>
+                        <li>Email: info@luxG.com</li>
+                        <li>Teléfono: +34 912 34 56 78</li>
+                        <li>Dirección: Ave del paraiso, 7</li>
+                    </ul>
+                </div>
+
+                <!-- RIGTH COLUMN -->
+                <div class="footer-section">
+                    <h3>Síguenos</h3>
+                    <ul>
+                        <li><a href="https://x.com/?lang=es"><img src="/static/assets/images/X-icon.jpg" alt="X" class="social-icon"> X</a></li>
+                        <li><a href="https://www.facebook.com/?locale=es_ES"><img src="/static/assets/images/facebook-icon.jpg" alt="Facebook" class="social-icon"> Facebook</a></li>
+                        <li><a href="https://www.instagram.com/"><img src="/static/assets/images/instagram-icon.jpg" alt="Instagram" class="social-icon"> Instagram</a></li>
+                    </ul>
+                </div>
+
+                <!-- COPYRIGHT -->
+                <div class="copyright">
+                        <p>Copyright © 2048 LUGX Gaming Company. All rights reserved.</p>
+                </div>
+            </div>
+        </footer>
     </body>
 </html>
