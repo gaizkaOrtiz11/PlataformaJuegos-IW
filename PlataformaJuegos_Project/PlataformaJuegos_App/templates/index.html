@@ -4,9 +4,11 @@
 {% block title %}Inicio - Plataforma Juegos{% endblock %}
 
 {% block index %}
+    <!-- MAIN -->
     <div class="main-banner">
         <div class="container">
             <div class="row">
+                <!-- TEXTO MAIN IZQUIERDA -->
                 <div class="col-lg-6 align-self-center">
                     <div class="caption header-text">
                         <h6>Bienvenido a DeustoGames</h6>
@@ -14,6 +16,7 @@
                         <p>DeustoGames es la web de información sobre videojuegos, jugadores profesionales y plataformas de esports con base en Bilbao, País Vasco. Te ofrecemos noticias actualizadas, perfiles de jugadores, datos de equipos y todo lo relacionado con las principales plataformas y títulos competitivos.</p>
                     </div>
                 </div>
+                <!-- IMAGEN MAIN -->
                 <div class="col-lg-4 offset-lg-2">
                     <div class="right-image">
                         <img src="{% static 'assets/images/banner-image.jpg' %}" alt="Image landing page">
@@ -23,9 +26,12 @@
         </div>
     </div>
 
+    <!-- CARACTERÍSTICAS -->
     <div class="features">
         <div class="container">
             <div class="row">
+
+                <!-- PLATAFORMAS -->
                 <div class="col-lg-3 col-md-6">
                     <a href="/plataformas/plataformas/">
                         <div class="item">
@@ -36,6 +42,8 @@
                         </div>
                     </a>
                 </div>
+
+                <!-- JUGADORES -->
                 <div class="col-lg-3 col-md-6">
                     <a href="/plataformas/jugadores/">
                         <div class="item">
@@ -46,6 +54,8 @@
                         </div>
                     </a>
                 </div>
+
+                <!-- PARTIDAS -->
                 <div class="col-lg-3 col-md-6">
                     <a href="/plataformas/juegos/">
                         <div class="item">
@@ -56,6 +66,8 @@
                         </div>
                     </a>
                 </div>
+
+                <!-- NOTICIAS -->
                 <div class="col-lg-3 col-md-6">
                     <a href="#">
                         <div class="item">
@@ -70,10 +82,10 @@
         </div>
     </div>
 
-    <!-- CHATBOT SECTION -->
+    <!-- SECCIÓN CHATBOT -->
      <div id="chatbot-section">
         <div class="container"> 
-            <!-- TITLE -->
+            <!-- TÍTULO -->
             <div class="section-heading">
                 <h2>Habla con Deusti, la IA de DeustoGames</h2>
             </div>
@@ -95,172 +107,46 @@
         </div>
      </div>
 
+    <!-- SECCIÓN DE TENDENCIAS -->
     <div class="section trending">
         <div class="container">
             <div class="row">
                 <div class="col-lg-6">
                     <div class="section-heading">
                         <h6>Tendencias</h6>
-                        <h2>Juegas en tendencias</h2>
+                        <h2>Juegos en tendencias</h2>
                     </div>
                 </div>
-                <div class="col-lg-6">
-                    <div class="main-button">
-                    </div>
-                </div>
-
-                <div class="col-lg-3 col-md-6">
-                    <div class="item">
-                        <div class="thumb">
-                            <a href="#"><img src="{% static 'assets/images/trending-01.jpg' %}" alt=""></a>
-                        </div>
-                        <div class="down-content">
-                            <span class="category">Action</span>
-                            <h4>Assasin Creed</h4>
-                            <a href="#"><i class="fa fa-shopping-bag"></i></a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-lg-3 col-md-6">
-                    <div class="item">
-                        <div class="thumb">
-                            <a href="#"><img src="{% static 'assets/images/trending-02.jpg' %}" alt=""></a>
-                        </div>
-                        <div class="down-content">
-                            <span class="category">Action</span>
-                            <h4>Assasin Creed</h4>
-                            <a href="#"><i class="fa fa-shopping-bag"></i></a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-lg-3 col-md-6">
-                    <div class="item">
-                        <div class="thumb">
-                            <a href="#"><img src="{% static 'assets/images/trending-03.jpg' %}" alt=""></a>
-                        </div>
-                        <div class="down-content">
-                            <span class="category">Action</span>
-                            <h4>Assasin Creed</h4>
-                            <a href="#"><i class="fa fa-shopping-bag"></i></a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-lg-3 col-md-6">
-                    <div class="item">
-                        <div class="thumb">
-                            <a href="#"><img src="{% static 'assets/images/trending-04.jpg' %}" alt=""></a>
-                        </div>
-                        <div class="down-content">
-                            <span class="category">Action</span>
-                            <h4>Assasin Creed</h4>
-                            <a href="#"><i class="fa fa-shopping-bag"></i></a>
-                        </div>
-                    </div>
-                </div>
-
             </div>
+
+            <!-- CONTENEDOR DINÁMICO TENDENCIAS (JS) -->
+            <div class="row" id="trending-games-container"> </div>
         </div>
     </div>
 
+    <!-- SECCIÓN DE MÁS JUGADOS -->
     <div class="section most-played">
         <div class="container">
             <div class="row">
                 <div class="col-lg-6">
                     <div class="section-heading">
                         <h6>Juegos más TOP</h6>
-                        <h2>Más jugados</h2>
+                        <h2>Más jugados en Steam</h2>
                     </div>
                 </div>
                 <div class="col-lg-6">
                     <div class="main-button">
                     </div>
                 </div>
+            </div>
 
-                <div class="col-lg-2 col-md-6 col-sm-6">
-                    <div class="item">
-                        <div class="thumb">
-                            <a href="#"><img src="{% static 'assets/images/top-game-01.jpg' %}" alt=""></a>
-                        </div>
-                        <div class="down-content">
-                            <span class="category">Adventure</span>
-                            <h4>Assasin Creed</h4>
-                            <a href="#"><span>Explore</span></a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-lg-2 col-md-6 col-sm-6">
-                    <div class="item">
-                        <div class="thumb">
-                            <a href="#"><img src="{% static 'assets/images/top-game-02.jpg' %}" alt=""></a>
-                        </div>
-                        <div class="down-content">
-                            <span class="category">Adventure</span>
-                            <h4>Assasin Creed</h4>
-                            <a href="#"><span>Explore</span></a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-lg-2 col-md-6 col-sm-6">
-                    <div class="item">
-                        <div class="thumb">
-                            <a href="#"><img src="{% static 'assets/images/top-game-03.jpg' %}" alt=""></a>
-                        </div>
-                        <div class="down-content">
-                            <span class="category">Adventure</span>
-                            <h4>Assasin Creed</h4>
-                            <a href="#"><span>Explore</span></a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-lg-2 col-md-6 col-sm-6">
-                    <div class="item">
-                        <div class="thumb">
-                            <a href="#"><img src="{% static 'assets/images/top-game-04.jpg' %}" alt=""></a>
-                        </div>
-                        <div class="down-content">
-                            <span class="category">Adventure</span>
-                            <h4>Assasin Creed</h4>
-                            <a href="#"><span>Explore</span></a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-lg-2 col-md-6 col-sm-6">
-                    <div class="item">
-                        <div class="thumb">
-                            <a href="#"><img src="{% static 'assets/images/top-game-05.jpg' %}" alt=""></a>
-                        </div>
-                        <div class="down-content">
-                            <span class="category">Adventure</span>
-                            <h4>Assasin Creed</h4>
-                            <a href="#"><span>Explore</span></a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-lg-2 col-md-6 col-sm-6">
-                    <div class="item">
-                        <div class="thumb">
-                            <a href="#"><img src="{% static 'assets/images/top-game-06.jpg' %}" alt=""></a>
-                        </div>
-                        <div class="down-content">
-                            <span class="category">Adventure</span>
-                            <h4>Assasin Creed</h4>
-                            <a href="#"><span>Explore</span></a>
-                        </div>
-                    </div>
-                </div>
-
+            <!-- CONTENEDOR DINÁMICO MÁS JUGADOS (JS) -->
+            <div class="row" id="most-played-games-container">
             </div>
         </div>
     </div>
 
+    <!-- SECCIÓN DE CATEGORÍAS -->
     <div class="section categories">
         <div class="container">
             <div class="row">
@@ -271,47 +157,52 @@
                     </div>
                 </div>
 
+                <!-- SHOOTER -->
                 <div class="col-lg col-sm-6 col-xs-12">
                     <div class="item">
-                        <h4>Action</h4>
+                        <h4>Shooter</h4>
                         <div class="thumb">
-                            <a href="#"><img src="{% static 'assets/images/categories-01.jpg' %}" alt=""></a>
+                            <a href="{% url 'lista_juegos' %}"><img src="{% static 'assets/images/categories-01.jpg' %}" alt="Foto categoría shooter"></a>
                         </div>
                     </div>
                 </div>
 
+                <!-- ESTRATEGIA -->
                 <div class="col-lg col-sm-6 col-xs-12">
                     <div class="item">
-                        <h4>Action</h4>
+                        <h4>Estrategia</h4>
                         <div class="thumb">
-                            <a href="#"><img src="{% static 'assets/images/categories-05.jpg' %}" alt=""></a>
+                            <a href="{% url 'lista_juegos' %}"><img src="{% static 'assets/images/categories-04.jpg' %}" alt="Foto categoría estrategia"></a>
                         </div>
                     </div>
                 </div>
 
+                <!-- MOBA -->
                 <div class="col-lg col-sm-6 col-xs-12">
                     <div class="item">
-                        <h4>Action</h4>
+                        <h4>MOBA</h4>
                         <div class="thumb">
-                            <a href="#"><img src="{% static 'assets/images/categories-03.jpg' %}" alt=""></a>
+                            <a href="{% url 'lista_juegos' %}"><img src="{% static 'assets/images/categories-02.jpg' %}" alt="Foto categoría MOBA"></a>
                         </div>
                     </div>
                 </div>
 
+                <!-- ACCIÓN -->
                 <div class="col-lg col-sm-6 col-xs-12">
                     <div class="item">
-                        <h4>Action</h4>
+                        <h4>Acción</h4>
                         <div class="thumb">
-                            <a href="#"><img src="{% static 'assets/images/categories-04.jpg' %}" alt=""></a>
+                            <a href="{% url 'lista_juegos' %}"><img src="{% static 'assets/images/categories-03.jpg' %}" alt="Foto categoría acción"></a>
                         </div>
                     </div>
                 </div>
 
+                <!-- HISTORIA -->
                 <div class="col-lg col-sm-6 col-xs-12">
                     <div class="item">
-                        <h4>Action</h4>
+                        <h4>Historia</h4>
                         <div class="thumb">
-                            <a href="#"><img src="{% static 'assets/images/categories-05.jpg' %}" alt=""></a>
+                            <a href="{% url 'lista_juegos' %}"><img src="{% static 'assets/images/categories-05.jpg' %}" alt="Foto categoría historia"></a>
                         </div>
                     </div>
                 </div>
@@ -320,32 +211,38 @@
         </div>
     </div>
 
+    <!-- SECCIÓN NEWSLETTER -->
     <div class="section cta">
         <div class="container">
             <div class="row">
+
+                <!-- CARTEL LADO IZQUIERDO -->
                 <div class="col-lg-5">
                     <div class="shop">
                         <div class="row">
+                            <!-- TEXTO -->
                             <div class="col-lg-12">
                                 <div class="section-heading">
                                     <h6>Descatado</h6>
                                     <h2>Noticias, lanzamientos y contenido <em>exclusivo</em> cada semana.</h2>
                                 </div>
                                 <p>Únete a nuestra comunidad y recibe lo mejor de los videojuegos directamente en tu inbox.</p>
-                                <div class="main-button">
-                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
+
+                <!-- CARTEL LADO DERECHO-->
                 <div class="col-lg-5 offset-lg-2 align-self-end">
                     <div class="subscribe">
                         <div class="row">
                             <div class="col-lg-12">
+                                <!-- TEXTO -->
                                 <div class="section-heading">
                                     <h6>NEWSLETTER</h6>
                                     <h2>No te pierdas nada del mundo gamer, <em>suscríbete hoy</em>.</h2>
                                 </div>
+                                <!-- FORMULARIO EMAIL -->
                                 <div class="search-input">
                                     <form id="subscribe" action="#">
                                         <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Tu correo electrónico...">
