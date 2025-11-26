@@ -1,11 +1,17 @@
 from bs4 import BeautifulSoup
 import requests
 import csv
+import os
+from pathlib import Path
+
+# Ruta fija para guardar el CSV
+csv_path = Path(
+    r"C:\Users\asher\Desktop\universidad\ingenieria_web\PlataformaJuegos-IW\PlataformaJuegos_Project\PlataformaJuegos_App\static\scrap\top6_steamcharts.csv"
+)
 
 URL = "https://steamcharts.com/top"
 
 resp = requests.get(URL, timeout=15)
-resp.raise_for_status()
 
 soup = BeautifulSoup(resp.text, "lxml")
 
@@ -39,14 +45,13 @@ for i, row in enumerate(rows):
     else:
         player_hours = tds[-1].get_text(strip=True)
 
-
-    # Clean string and conver to int
+    # Clean string and convert to int
     def to_int(s):
         s = s.replace(",", "").replace(".", "").strip()
         try:
             return int(s)
         except:
-            return s  # if it's not convertible, return the string
+            return s
 
     current_players = to_int(current_players)
     player_hours = to_int(player_hours)
@@ -59,8 +64,10 @@ for i, row in enumerate(rows):
     })
 
 
-# Save on CSV
-with open("top6_steamcharts.csv", "w", newline="", encoding="utf-8") as f:
+# Save on CSV en la ruta especificada
+with open(csv_path, "w", newline="", encoding="utf-8") as f:
     writer = csv.DictWriter(f, fieldnames=["rank", "title", "current_players", "player_hours"])
     writer.writeheader()
     writer.writerows(data)
+
+print(f"CSV guardado en: {csv_path}")
