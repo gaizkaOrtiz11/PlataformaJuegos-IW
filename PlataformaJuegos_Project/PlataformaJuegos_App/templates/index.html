@@ -1,25 +1,27 @@
 {% extends 'base.html' %}
 {% load static %}
 
-{% block title %}Inicio - Plataforma Juegos{% endblock %}
+{% block title %}DeustoGames{% endblock %}
 
 {% block index %}
     <!-- MAIN -->
     <div class="main-banner">
         <div class="container">
-            <div class="row">
+            <div class="banner-inner">
                 <!-- TEXTO MAIN IZQUIERDA -->
-                <div class="col-lg-6 align-self-center">
+                <div class="banner-left">
                     <div class="caption header-text">
                         <h6>Bienvenido a DeustoGames</h6>
                         <h2>LA MEJOR PLATAFORMA DE VIDEOJUEGOS</h2>
+
                         <p>DeustoGames es la web de información sobre videojuegos, jugadores profesionales y plataformas de esports con base en Bilbao, País Vasco. Te ofrecemos noticias actualizadas, perfiles de jugadores, datos de equipos y todo lo relacionado con las principales plataformas y títulos competitivos.</p>
                     </div>
                 </div>
-                <!-- IMAGEN MAIN -->
-                <div class="col-lg-4 offset-lg-2">
+
+                <!-- IMAGEN MAIN DERECHA (visible en escritorio) -->
+                <div class="banner-right">
                     <div class="right-image">
-                        <img src="{% static 'assets/images/banner-image.jpg' %}" alt="Image landing page">
+                        <img src="{% static 'assets/images/banner-image.jpg' %}" alt="Image landing page" class="banner-image">
                     </div>
                 </div>
             </div>

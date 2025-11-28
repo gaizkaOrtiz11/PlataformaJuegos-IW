@@ -1,79 +1,17 @@
-/*
-
-TemplateMo 589 lugx gaming
-
-https://templatemo.com/tm-589-lugx-gaming
-
-*/
-
-/* ---------------------------------------------
-Table of contents
-------------------------------------------------
-01. font & reset css
-02. reset
-03. global styles
-04. header
-05. banner
-06. features
-07. testimonials
-08. contact
-09. footer
-
---------------------------------------------- */
-/* 
----------------------------------------------
-font & reset css
---------------------------------------------- 
-*/
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900");
-/* 
----------------------------------------------
-reset
---------------------------------------------- 
-*/
-html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, div
-pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q,
-s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li,
-figure, header, nav, section, article, aside, footer, figcaption {
+
+* {
   margin: 0;
   padding: 0;
   border: 0;
   outline: 0;
-}
-
-.clearfix:after {
-  content: ".";
-  display: block;
-  clear: both;
-  visibility: hidden;
-  line-height: 0;
-  height: 0;
-}
-
-.clearfix {
-  display: inline-block;
-}
-
-html[xmlns] .clearfix {
-  display: block;
-}
-
-* html .clearfix {
-  height: 1%;
+  box-sizing: border-box;
 }
 
 ul, li {
   padding: 0;
   margin: 0;
   list-style: none;
-}
-
-header, nav, section, article, aside, footer, hgroup {
-  display: block;
-}
-
-* {
-  box-sizing: border-box;
 }
 
 html, body {
@@ -87,21 +25,21 @@ a {
   text-decoration: none !important;
 }
 
+ul {
+  margin-bottom: 0px;
+}
+
 h1, h2, h3, h4, h5, h6 {
-  color: #1e1e1e;
+  color: #2d2d2d;
   margin-top: 0px;
   margin-bottom: 0px;
   font-weight: 700;
 }
 
-ul {
-  margin-bottom: 0px;
-}
-
 p {
   font-size: 14px;
   line-height: 28px;
-  color: #4a4a4a;
+  color: #727272;
 }
 
 img {
@@ -120,18 +58,9 @@ body {
   font-family: 'Poppins', sans-serif;
 }
 
-::selection {
-  background: #0071f8;
-  color: #fff;
-}
-
-::-moz-selection {
-  background: #0071f8;
-  color: #fff;
-}
 
 .section {
-  margin-top: 120px;
+  margin-top: 120px
 }
 
 .section-heading {
@@ -139,10 +68,8 @@ body {
 }
 
 .section-heading h2 {
-  font-size: 36px;
-  font-weight: 700;
   text-transform: capitalize;
-  margin-top: 20px;
+  margin-top: 30px;
   line-height: 44px;
 }
 
@@ -153,9 +80,21 @@ body {
 
 .section-heading h6 {
   color: #ee626b;
-  font-size: 15px;
   text-transform: uppercase;
-  font-weight: 700;
+}
+
+.banner-left .caption h6 {
+  color: #8ec5f3;
+  font-size: 30px;
+}
+
+.banner-left .caption h2 {
+  font-size: 50px;
+  color: white !important;
+}
+
+.banner-left .caption p {
+  color: white !important;
 }
 
 .main-button a {
@@ -176,107 +115,6 @@ body {
   background-color: #0071f8;
   color: #fff;
 }
-
-/* 
----------------------------------------------
-Pre-loader Style
---------------------------------------------- 
-*/
-
-.js-preloader {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: rgba(0,0,0,0.99);
-  display: -webkit-box;
-  display: flex;
-  -webkit-box-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  justify-content: center;
-  opacity: 1;
-  visibility: visible;
-  z-index: 9999;
-  -webkit-transition: opacity 0.25s ease;
-  transition: opacity 0.25s ease;
-}
-
-.js-preloader.loaded {
-  opacity: 0;
-  visibility: hidden;
-  pointer-events: none;
-}
-
-@-webkit-keyframes dot {
-  50% {
-      -webkit-transform: translateX(96px);
-      transform: translateX(96px);
-  }
-}
-
-@keyframes dot {
-  50% {
-      -webkit-transform: translateX(96px);
-      transform: translateX(96px);
-  }
-}
-
-@-webkit-keyframes dots {
-  50% {
-      -webkit-transform: translateX(-31px);
-      transform: translateX(-31px);
-  }
-}
-
-@keyframes dots {
-  50% {
-      -webkit-transform: translateX(-31px);
-      transform: translateX(-31px);
-  }
-}
-
-.preloader-inner {
-  position: relative;
-  width: 142px;
-  height: 40px;
-  background: transparent;
-}
-
-.preloader-inner .dot {
-  position: absolute;
-  width: 16px;
-  height: 16px;
-  top: 12px;
-  left: 15px;
-  background: #0071f8;
-  border-radius: 50%;
-  -webkit-transform: translateX(0);
-  transform: translateX(0);
-  -webkit-animation: dot 2.8s infinite;
-  animation: dot 2.8s infinite;
-}
-
-.preloader-inner .dots {
-  -webkit-transform: translateX(0);
-  transform: translateX(0);
-  margin-top: 12px;
-  margin-left: 31px;
-  -webkit-animation: dots 2.8s infinite;
-  animation: dots 2.8s infinite;
-}
-
-.preloader-inner .dots span {
-  display: block;
-  float: left;
-  width: 16px;
-  height: 16px;
-  margin-left: 16px;
-  background: #0071f8;
-  border-radius: 50%;
-}
-
 
 
 /* 
@@ -648,118 +486,98 @@ Banner Style
   padding: 225px 0px;
 }
 
-.main-banner .caption h6 {
-  font-size: 20px;
-  text-transform: uppercase;
-  color: #fff;
-  font-weight: 500;
-  letter-spacing: 0.5px;
+/* --- layout propio (sin Bootstrap) --- */
+/* revertir a flex para evitar superposición y recuperar selección de texto */
+.banner-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  flex-wrap: wrap;
+  padding: 0 1rem;
 }
 
-.main-banner .caption h2 {
-  font-size: 48px;
-  color: #fff;
-  margin-top: 20px;
-  position: relative;
-  padding-bottom: 5px;
-  margin-bottom: 40px;
+.banner-left {
+  flex: 1 1 55%;
+  min-width: 280px;
+  padding-right: 50px;
+  z-index: 2;
 }
 
-.main-banner .caption h2:after {
-  position: absolute;
-  background-image: url(../assets/images/caption-dec.png);
-  width: 202px;
-  height: 12px;
-  content: '';
-  left: 125px;
-  bottom: 0;
+.banner-right {
+  flex: 1 1 40%;
+  min-width: 260px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding-left: 50px;
+  z-index: 1;
 }
 
-.main-banner .caption p {
-  color: #fff;
-  margin-bottom: 70px;
-}
-
-.main-banner .caption form {
-  position: relative;
-  max-width: 450px;
-}
-
-.main-banner .caption form input {
-  max-width: 450px;
-  width: 100%;
-  height: 50px;
-  outline: none;
+.banner-image {
+  width: 0px;
+  height: auto;  
+  max-width: 570px;
   border-radius: 25px;
-  background-color: #fff;
-  border: none;
-  padding: 0px 25px;
-  font-size: 14px;
-  color: #7a7a7a;
-}
-
-.main-banner .caption form button {
+  object-fit: cover;
   display: inline-block;
-  height: 50px;
-  line-height: 50px;
-  background-color: #ee626b;
-  color: #fff;
-  font-size: 15px;
-  text-transform: uppercase;
-  font-weight: 500;
-  padding: 0px 25px;
-  border: none;
-  border-radius: 25px;
-  position: absolute;
-  right: 0;
-  top: 0;
-  transition: all .3s;
 }
 
-.main-banner .caption form button:hover {
-  background-color: #0071f8;
-}
-
-.main-banner .right-image {
-  position: relative;
-}
-
+/* anula la regla anterior que fijaba altura para .main-banner .right-image img */
 .main-banner .right-image img {
+  width: 100%;
+  height: auto;
   border-radius: 25px;
 }
 
-.main-banner .right-image span.price {
-  position: absolute;
-  right: 20px;
-  top: 20px;
-  border-radius: 25px;
-  background-color: #008af8;
-  font-size: 22px;
-  text-transform: uppercase;
-  font-weight: 700;
-  color: #fff;
-  padding: 4px 15px;
+/* eliminar reglas para banner-inline-image (ya no existe en HTML) */
+.banner-inline-image { display: none; }
+
+/* comportamiento en pantallas pequeñas: apilar sin ocultar la imagen derecha */
+@media (max-width: 992px) {
+  .banner-inner {
+    flex-direction: column;
+    text-align: center;
+  }
+  .banner-left,
+  .banner-right {
+    flex: 1 1 100%;
+    min-width: 0;
+    padding-left: 0;
+    padding-right: 0;
+  }
+  .banner-right {
+    justify-content: center;
+    padding-top: 20px;
+  }
+  .main-banner {
+    padding: 120px 0px;
+  }
+  .banner-image {
+    max-width: 90%;
+    max-height: 350px;
+  }
 }
 
-.main-banner .right-image span.offer {
-  position: absolute;
-  left: -25px;
-  bottom: -25px;
-  border-radius: 50%;
-  background-color: #ee626b;
-  font-size: 28px;
-  text-transform: uppercase;
-  font-weight: 700;
-  color: #fff;
-  display: inline-block;
-  width: 100px;
-  height: 100px;
-  text-align: center;
-  line-height: 100px;
+
+/* móvil: imagen centrada y siempre con borde suave para contraste */
+@media (max-width: 992px) {
+  .banner-inline-image {
+    display: block;
+  }
+  .banner-inline-image .banner-image {
+    border-radius: 20px;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.18); /* ligero contraste sin alterar colores */
+  }
+
+  /* asegurar la pseudo-element del H2 no se salga en móvil */
+  .banner-left .caption h2:after {
+    left: 50%;
+    transform: translateX(-50%);
+  }
 }
-
-
-
 /* 
 ---------------------------------------------
 Services Style
@@ -1697,6 +1515,20 @@ body {
   }
 }
 
-@media (max-width: 1200px) {
-  
+
+/* móvil: imagen centrada y siempre con borde suave para contraste */
+@media (max-width: 992px) {
+  .banner-inline-image {
+    display: block;
+  }
+  .banner-inline-image .banner-image {
+    border-radius: 20px;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.18); /* ligero contraste sin alterar colores */
+  }
+
+  /* asegurar la pseudo-element del H2 no se salga en móvil */
+  .banner-left .caption h2:after {
+    left: 50%;
+    transform: translateX(-50%);
+  }
 }
