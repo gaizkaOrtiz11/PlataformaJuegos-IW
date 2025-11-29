@@ -177,6 +177,11 @@ body {
   color: #fff;
 }
 
+img.smallLogo{
+  width: 60px;
+  height: 60px;
+}
+
 /* 
 ---------------------------------------------
 Pre-loader Style
@@ -302,6 +307,7 @@ Header Style
 .background-header .logo img {
   max-width: 250px;
 }
+
 
 .header-area {
   position: absolute;
