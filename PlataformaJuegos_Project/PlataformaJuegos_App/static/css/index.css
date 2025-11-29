@@ -1,0 +1,604 @@
+
+/* 
+---------------------------------------------
+Banner Style
+--------------------------------------------- 
+*/
+
+.main-banner {
+  background-image: url(../assets/images/banner-bg.jpg);
+  border-radius: 0px 0px 150px 150px;
+  background-position: center bottom;
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding: 225px 0px;
+}
+
+/* --- layout propio (sin Bootstrap) --- */
+/* revertir a flex para evitar superposición y recuperar selección de texto */
+.banner-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  flex-wrap: wrap;
+  padding: 0 1rem;
+}
+
+.banner-left {
+  flex: 1 1 55%;
+  min-width: 280px;
+  padding-right: 50px;
+  z-index: 2;
+}
+
+.banner-right {
+  flex: 1 1 40%;
+  min-width: 260px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding-left: 50px;
+  z-index: 1;
+}
+
+.banner-image {
+  width: 0px;
+  height: auto;  
+  max-width: 570px;
+  border-radius: 25px;
+  object-fit: cover;
+  display: inline-block;
+}
+
+/* anula la regla anterior que fijaba altura para .main-banner .right-image img */
+.main-banner .right-image img {
+  width: 100%;
+  height: auto;
+  border-radius: 25px;
+}
+
+/* eliminar reglas para banner-inline-image (ya no existe en HTML) */
+.banner-inline-image { display: none; }
+
+/* comportamiento en pantallas pequeñas: apilar sin ocultar la imagen derecha */
+@media (max-width: 992px) {
+  .banner-inner {
+    flex-direction: column;
+    text-align: center;
+  }
+  .banner-left,
+  .banner-right {
+    flex: 1 1 100%;
+    min-width: 0;
+    padding-left: 0;
+    padding-right: 0;
+  }
+  .banner-right {
+    justify-content: center;
+    padding-top: 20px;
+  }
+  .main-banner {
+    padding: 120px 0px;
+  }
+  .banner-image {
+    max-width: 90%;
+    max-height: 350px;
+  }
+}
+
+
+/* móvil: imagen centrada y siempre con borde suave para contraste */
+@media (max-width: 992px) {
+  .banner-inline-image {
+    display: block;
+  }
+  .banner-inline-image .banner-image {
+    border-radius: 20px;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.18); /* ligero contraste sin alterar colores */
+  }
+
+  /* asegurar la pseudo-element del H2 no se salga en móvil */
+  .banner-left .caption h2:after {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}
+/* 
+---------------------------------------------
+Services Style
+--------------------------------------------- 
+*/
+
+.features {
+  margin-top: -80px;
+}
+
+.features .item {
+  padding: 35px;
+  box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.15);
+  border-radius: 25px;
+  background-color: #fff;
+  text-align: center;
+}
+
+.features .item h4 {
+  font-size: 17px;
+  margin-top: 25px;
+  text-transform: uppercase;
+}
+
+.features .item .image {
+  width: 90px;
+  height: 90px;
+  display: inline-block;
+  text-align: center;
+  line-height: 90px;
+  background-color: #0071f8;
+  border-radius: 50%;
+  transition: all .3s;
+}
+
+.features .item:hover .image {
+  background-color: #ee626b;
+}
+
+
+
+/* 
+---------------------------------------------
+Trending Style
+--------------------------------------------- 
+*/
+
+.trending .main-button {
+  margin-top: 32px;
+  text-align: right;
+}
+
+.trending .item  {
+  background-color: #eeeeee;
+  position: relative;
+  overflow: hidden;
+  border-radius: 25px;
+  margin-bottom: 30px;
+}
+
+.trending .item .thumb {
+  position: relative;
+  border-radius: 25px;
+  overflow: hidden;
+}
+
+.trending .item span.price em {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  text-decoration: line-through;
+  display: block;
+}
+
+.trending .item span.price {
+  text-align: right;
+  position: absolute;
+  right: 20px;
+  top: 20px;
+  border-radius: 10px;
+  background-color: #008af8;
+  font-size: 17px;
+  text-transform: uppercase;
+  font-weight: 600;
+  color: #fff;
+  padding: 8px 15px 6px 15px;
+}
+
+.trending .item .down-content {
+  padding: 25px;
+}
+
+.trending .item .down-content span.category {
+  font-size: 14px;
+  color: #7a7a7a;
+  margin-bottom: 5px;
+  display: inline-block;
+}
+
+.trending .item .down-content h4 {
+  font-size: 17px;
+  font-weight: 600;
+  transition: all .3s;
+}
+
+.trending .item .down-content a {
+  position: absolute;
+  display: inline-block;
+  text-align: center;
+  line-height: 40px;
+  width: 40px;
+  height: 40px;
+  background-color: #ee626b;
+  color: #fff;
+  border-radius: 50%;
+  right: 25px;
+  bottom: 25px;
+  transition: all .3s;
+}
+
+.trending .item:hover .down-content h4 {
+  color: #0071f8;
+}
+
+.trending .item:hover .down-content a {
+  background-color: #0071f8;
+}
+
+
+/* 
+---------------------------------------------
+Most Played Style
+--------------------------------------------- 
+*/
+
+.most-played {
+  background-color: #f7f7f7;
+  padding: 100px 0px;
+  border-radius: 150px;
+}
+
+.most-played .main-button {
+  margin-top: 32px;
+  text-align: right;
+}
+
+.most-played .item  {
+  background-color: #fff;
+  position: relative;
+  border-radius: 25px;
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.most-played .item .thumb {
+  position: relative;
+  border-radius: 25px;
+  overflow: hidden;
+}
+
+.most-played .item .down-content {
+  padding: 20px 15px 40px 15px;
+}
+
+.most-played .item .down-content span.category {
+  font-size: 14px;
+  color: #7a7a7a;
+  margin-bottom: 5px;
+  display: inline-block;
+}
+
+.most-played .item .down-content h4 {
+  font-size: 17px;
+  font-weight: 600;
+  transition: all .3s;
+}
+
+.most-played .item .down-content a {
+  position: absolute;
+  display: inline-block;
+  text-align: center;
+  line-height: 40px;
+  height: 40px;
+  padding: 0px 15px;
+  background-color: #ee626b;
+  color: #fff;
+  border-radius: 20px;
+  font-size: 15px;
+  text-transform: uppercase;
+  font-weight: 600;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: -20px;
+  transition: all .3s;
+}
+
+.most-played .item:hover .down-content h4 {
+  color: #0071f8;
+}
+
+.most-played .item:hover .down-content a {
+  background-color: #0071f8;
+}
+
+
+/* 
+---------------------------------------------
+Categories Style
+--------------------------------------------- 
+*/
+
+.categories .main-button {
+  margin-top: 30px;
+}
+
+.categories .item  {
+  background-color: #0071f8;
+  position: relative;
+  border-radius: 25px;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.categories .item .thumb {
+  position: relative;
+  border-radius: 25px;
+  overflow: hidden;
+}
+
+.categories .item h4 {
+  font-size: 17px;
+  font-weight: 600;
+  color: #fff;
+  padding: 22px;
+  margin-bottom: 0px;
+}
+
+/* 
+---------------------------------------------
+CTA Style
+--------------------------------------------- 
+*/
+
+.cta {
+  position: relative;
+}
+
+.cta::after {
+  background-image: url(../assets/images/cta-bg.jpg);
+  max-width: 550px;
+  max-height: 510px;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  content: '';
+  border-radius: 25px;
+  left: 50%;
+  transform: translateX(-275px);
+  top: 0;
+  z-index: -1;
+}
+
+.cta .shop {
+  margin-top: 80px;
+  background-color: #f7f7f7;
+  border-radius: 25px;
+  padding: 80px;
+}
+
+.cta .shop .section-heading {
+  margin-right: 30px;
+  margin-bottom: 50px;
+}
+
+.cta .shop p {
+  font-weight: 600;
+  font-size: 16px;
+}
+
+.cta .shop .main-button {
+  margin-top: 50px;
+}
+
+.cta .subscribe {
+  background-color: #f7f7f7;
+  border-radius: 25px;
+  padding: 80px 60px;
+}
+
+.cta .subscribe .section-heading {
+  margin-bottom: 50px;
+}
+
+.cta .subscribe form {
+  position: relative;
+  max-width: 100%;
+}
+
+.cta .subscribe form input {
+  max-width: 100%;
+  width: 100%;
+  height: 50px;
+  outline: none;
+  border-radius: 25px;
+  background-color: #fff;
+  border: none;
+  padding: 0px 25px;
+  font-size: 14px;
+  color: #7a7a7a;
+}
+
+.cta .subscribe form button {
+  display: inline-block;
+  height: 50px;
+  line-height: 50px;
+  background-color: #ee626b;
+  color: #fff;
+  font-size: 15px;
+  text-transform: uppercase;
+  font-weight: 500;
+  padding: 0px 25px;
+  border: none;
+  border-radius: 25px;
+  position: absolute;
+  right: 0;
+  top: 0;
+  transition: all .3s;
+}
+
+.cta .subscribe form button:hover {
+  background-color: #0071f8;
+}
+
+
+/* ==========================================
+   JUEGOS EN TENDENCIA - ESTILOS SIMPLES
+   ========================================== */
+
+/* Contenedor principal */
+#trending-games-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+}
+
+/* Tarjeta individual de juego */
+.div_juegos_tendencia {
+  background-color: #eeeeee;
+  border-radius: 25px;
+  overflow: hidden;
+  flex: 1 1 calc(25% - 23px);
+  min-width: 250px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+}
+
+/* Contenedor de imagen */
+.div_juegos_tendencia .thumb {
+  position: relative;
+  width: 100%;
+  height: 200px;
+  overflow: hidden;
+}
+
+.div_juegos_tendencia .thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Badge de ranking */
+.rank-badge-trending {
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  background: linear-gradient(135deg, #ee626b 0%, #ff8a8f 100%);
+  color: white;
+  font-weight: 700;
+  font-size: 16px;
+  padding: 8px 15px;
+  border-radius: 15px;
+  box-shadow: 0 3px 10px rgba(238, 98, 107, 0.4);
+  z-index: 2;
+}
+
+/* Contenido inferior */
+.div_juegos_tendencia .down-content {
+  padding: 20px;
+}
+
+/* Categoría - OCULTA */
+.div_juegos_tendencia .down-content .category {
+  display: none;
+}
+
+/* Título del juego */
+.div_juegos_tendencia .down-content h4 {
+  font-size: 17px;
+  font-weight: 600;
+  color: #2d2d2d;
+  margin: 0;
+  line-height: 1.4;
+}
+
+
+/* ==========================================
+   JUEGOS MÁS JUGADOS - ESTILOS
+   ========================================== */
+
+/* Contenedor principal */
+#most-played-games-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+}
+
+/* Tarjeta individual de juego */
+#most-played-games-container .item {
+  background-color: #fff;
+  border-radius: 25px;
+  overflow: hidden;
+  flex: 1 1 calc(16.666% - 25px);
+  min-width: 180px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+  text-align: center;
+}
+
+/* Contenedor de imagen/badge */
+#most-played-games-container .item .thumb {
+  position: relative;
+  width: 100%;
+  height: 150px;
+  background-color: #0071f8;
+}
+
+/* Badge de ranking */
+#most-played-games-container .rank-badge {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #fff;
+  font-weight: 700;
+  font-size: 32px;
+}
+
+/* Contenido inferior */
+#most-played-games-container .item .down-content {
+  padding: 20px 15px;
+  position: relative;
+  padding-bottom: 70px;
+}
+
+/* Título del juego */
+#most-played-games-container .item .down-content h4 {
+  font-size: 15px;
+  font-weight: 600;
+  color: #2d2d2d;
+  margin-bottom: 15px;
+}
+
+/* Contenedor de estadísticas */
+#most-played-games-container .stats {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+/* Item individual de estadística */
+#most-played-games-container .stat-item {
+  font-size: 13px;
+  color: #7a7a7a;
+}
+
+#most-played-games-container .stat-item i {
+  margin-right: 5px;
+}
+
+/* Botón Explore */
+#most-played-games-container .item .down-content a {
+  position: absolute;
+  display: inline-block;
+  text-align: center;
+  line-height: 40px;
+  height: 40px;
+  padding: 0 20px;
+  background-color: #ee626b;
+  color: #fff;
+  border-radius: 20px;
+  font-size: 14px;
+  text-transform: uppercase;
+  font-weight: 600;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: -20px;
+  text-decoration: none;
+}
