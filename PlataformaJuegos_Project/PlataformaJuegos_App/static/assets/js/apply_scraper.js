@@ -52,8 +52,7 @@ function formatNumber(num) {
 // ==========================================
 function createTrendingGameHTML(game) {
     return `
-        <div class="col-lg-3 col-md-6">
-            <div class="item">
+            <div class="div_juegos_tendencia">
                 <div class="thumb">
                     <a href="#">
                         <img src="${game.picture}" 
@@ -65,10 +64,8 @@ function createTrendingGameHTML(game) {
                 <div class="down-content">
                     <span class="category">Trending</span>
                     <h4>${game.title}</h4>
-                    <a href="#"><i class="fa fa-shopping-bag"></i></a>
                 </div>
             </div>
-        </div>
     `;
 }
 
@@ -77,29 +74,23 @@ function createTrendingGameHTML(game) {
 // ==========================================
 function createMostPlayedGameHTML(game) {
     return `
-        <div class="col-lg-2 col-md-6 col-sm-6">
             <div class="item">
                 <div class="thumb">
-                    <a href="#">
-                        <img src="/static/assets/images/top-game-01.jpg" 
-                             alt="${game.title}">
-                    </a>
                     <span class="rank-badge">#${game.rank}</span>
                 </div>
                 <div class="down-content">
                     <h4>${game.title}</h4>
                     <div class="stats">
                         <span class="stat-item">
-                            <i class="fa fa-users"></i> ${formatNumber(game.current_players)}
+                            <i class="fa fa-users"></i> ${formatNumber(game.current_players)} de jugadores actualmente
                         </span>
                         <span class="stat-item">
-                            <i class="fa fa-clock-o"></i> ${formatNumber(game.player_hours)}h
+                            <i class="fa fa-clock-o"></i> ${formatNumber(game.player_hours)} de horas jugadas
                         </span>
                     </div>
                     <a href="#"><span>Explore</span></a>
                 </div>
             </div>
-        </div>
     `;
 }
 
