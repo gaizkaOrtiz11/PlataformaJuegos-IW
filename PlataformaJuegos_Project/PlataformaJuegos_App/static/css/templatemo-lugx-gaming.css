@@ -1122,7 +1122,8 @@ footer {
   width: 100%;
   margin: 0 auto;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
+  gap: 4rem;
   flex-wrap: wrap;
   padding: 0 2rem;
 }
@@ -1132,6 +1133,16 @@ footer {
   min-width: 200px;
   margin-bottom: 1rem;
 }
+
+.footer-section:first-child {
+    border-right: 1px solid rgba(255, 255, 255, 0.4);
+}
+
+.footer-section:nth-child(2) {
+    border-right: 1px solid rgba(255, 255, 255, 0.4);
+}
+
+
 
 .footer-section a {
   color: white;
