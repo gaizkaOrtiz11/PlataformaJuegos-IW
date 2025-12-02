@@ -47,6 +47,13 @@ img {
   object-fit: cover;
   overflow: hidden;
 }
+img.smallLogo{
+  width: 50px;
+}
+img.portrait{
+  height:300px;
+
+}
 
 /* 
 ---------------------------------------------
