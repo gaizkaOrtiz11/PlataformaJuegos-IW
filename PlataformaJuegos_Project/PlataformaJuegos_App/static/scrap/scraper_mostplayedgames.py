@@ -4,7 +4,7 @@ import csv
 import os
 from pathlib import Path
 
-# Ruta fija para guardar el CSV
+# Path to save the CSV
 csv_path = Path(
     r"C:\Users\asher\Desktop\universidad\ingenieria_web\PlataformaJuegos-IW\PlataformaJuegos_Project\PlataformaJuegos_App\static\scrap\top6_steamcharts.csv"
 )
@@ -64,10 +64,10 @@ for i, row in enumerate(rows):
     })
 
 
-# Save on CSV en la ruta especificada
+# Save on CSV the specified path
 with open(csv_path, "w", newline="", encoding="utf-8") as f:
     writer = csv.DictWriter(f, fieldnames=["rank", "title", "current_players", "player_hours"])
     writer.writeheader()
     writer.writerows(data)
 
-print(f"CSV guardado en: {csv_path}")
+print(f"CSV saved in: {csv_path}")

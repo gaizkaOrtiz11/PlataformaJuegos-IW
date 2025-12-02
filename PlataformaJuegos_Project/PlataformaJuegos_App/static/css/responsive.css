@@ -1,0 +1,324 @@
+body {
+  overflow-x: hidden;
+}
+
+@media (max-width: 767px) {
+  .header-area {
+    top: 0;
+  }
+  .main-banner .right-image span.offer {
+    left: 20px;
+    bottom: 20px;
+  }
+  .cta .subscribe form button {
+    position: relative;
+    width: 100%;
+    margin-top: 15px;
+  }
+}
+
+@media (max-width: 992px) {
+  .header-area .main-nav .logo img {
+    max-width: 110px;
+  }
+  .header-area .main-nav .nav li a {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+  .header-area .main-nav ul.nav {
+    margin-top: 0px;
+  }
+  .background-header .main-nav ul.nav {
+    margin-top: 20px;
+  }
+  .main-banner .caption {
+    margin-bottom: 45px;
+    text-align: center;
+  }
+  .main-banner .caption form,
+  .main-banner .caption form input {
+    max-width: 100%;
+  }
+  .features .item {
+    margin-bottom: 30px;
+  }
+  .trending .main-button,
+  .cta::after,
+  .most-played .main-button,
+  .related-games .main-button {
+    display: none;
+  }
+  .most-played .section-heading {
+    text-align: center;
+  }
+  .cta .shop {
+    padding: 30px;
+    margin-bottom: 30px;
+  }
+  .cta .subscribe {
+    padding: 30px;
+  }
+  .cta .shop .section-heading {
+    margin-right: 0px;
+  }
+  .trending ul.trending-filter li a {
+    font-size: 13px;
+    padding: 8px 10px;
+  }
+  .trending ul.trending-filter li {
+    margin: 5px 2px;
+  }
+  .single-product .left-image {
+    margin-right: 0px;
+    margin-bottom: 45px;
+  }
+  .tabs-content .nav-link {
+    font-size: 16px;
+  }
+  .tabs-content ul.nav-tabs li {
+    margin-right: 15px;
+    padding-right: 15px;
+  }
+  .page-heading {
+    padding: 140px 0px 100px 0px;
+  }
+  .contact-page .right-content {
+    margin-left: 0px;
+    margin-top: 45px;
+  }
+}
+
+
+/* móvil: imagen centrada y siempre con borde suave para contraste */
+@media (max-width: 992px) {
+  .banner-inline-image {
+    display: block;
+  }
+  .banner-inline-image .banner-image {
+    border-radius: 20px;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.18); /* ligero contraste sin alterar colores */
+  }
+
+  /* asegurar la pseudo-element del H2 no se salga en móvil */
+  .banner-left .caption h2:after {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}
+
+/* Responsive */
+@media (max-width: 1200px) {
+  .div_juegos_tendencia {
+    flex: 1 1 calc(33.333% - 20px);
+  }
+}
+
+@media (max-width: 992px) {
+  .div_juegos_tendencia {
+    flex: 1 1 calc(50% - 15px);
+  }
+  
+  .div_juegos_tendencia .thumb {
+    height: 180px;
+  }
+}
+
+@media (max-width: 576px) {
+  #trending-games-container {
+    gap: 20px;
+  }
+  
+  .div_juegos_tendencia {
+    flex: 1 1 100%;
+    min-width: 0;
+  }
+  
+  .div_juegos_tendencia .thumb {
+    height: 220px;
+  }
+  
+  .rank-badge-trending {
+    font-size: 14px;
+    padding: 6px 12px;
+  }
+}
+
+/* Responsive */
+@media (max-width: 1400px) {
+  #most-played-games-container .item {
+    flex: 1 1 calc(20% - 24px);
+  }
+}
+
+@media (max-width: 1200px) {
+  #most-played-games-container .item {
+    flex: 1 1 calc(25% - 23px);
+    min-width: 200px;
+  }
+}
+
+@media (max-width: 992px) {
+  #most-played-games-container {
+    gap: 25px;
+  }
+  
+  #most-played-games-container .item {
+    flex: 1 1 calc(33.333% - 17px);
+  }
+  
+  #most-played-games-container .item .thumb {
+    height: 140px;
+  }
+  
+  #most-played-games-container .rank-badge {
+    font-size: 28px;
+  }
+}
+
+@media (max-width: 768px) {
+  #most-played-games-container .item {
+    flex: 1 1 calc(50% - 13px);
+  }
+}
+
+@media (max-width: 576px) {
+  #most-played-games-container {
+    gap: 20px;
+  }
+  
+  #most-played-games-container .item {
+    flex: 1 1 100%;
+    min-width: 0;
+  }
+  
+  #most-played-games-container .item .thumb {
+    height: 150px;
+  }
+  
+  #most-played-games-container .rank-badge {
+    font-size: 36px;
+  }
+  
+  #most-played-games-container .item .down-content h4 {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 1200px) {
+  .header-area .main-nav .nav li {
+    padding-left: 5px;
+    padding-right: 5px;
+  }
+
+}
+
+@media (max-width: 767px) {
+  .background-header .main-nav {
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.15);
+    border-radius: 0px 0px 25px 25px;
+    width: 100%;
+  }
+  .background-header .main-nav .nav,
+  .header-area .main-nav .nav {
+    background-color: #fff;
+  }
+  .background-header .main-nav .nav li a,
+  .header-area .main-nav .nav li a {
+    line-height: 50px;
+    height: 50px;
+    font-weight: 400;
+    color: #1e1e1e;
+    background-color: #fff;
+     border-radius: 0px 0px 25px 25px;
+  }
+  .background-header .main-nav .nav li,
+  .header-area .main-nav .nav li {
+    border-top: 1px solid #ddd;
+    background-color: #f1f0fe;
+    height: 50px;
+    border-radius: 0px 0px 25px 25px;
+  }
+  .background-header .main-nav .nav li:last-child,
+  .header-area .main-nav .nav li:last-child {
+    border-radius: 0px 0px 25px 25px;
+  }
+  .header-area .main-nav .nav {
+    height: auto;
+    flex-basis: 100%;
+  }
+  .header-area .main-nav .logo {
+    position: absolute;
+    left: 30px;
+    top: 0px;
+  }
+  .background-header .main-nav .logo {
+    top: 0px;
+  }
+  .background-header .main-nav .border-button {
+    top: 0px !important;
+  }
+  .header-area .main-nav .border-button {
+    position: absolute;
+    top: 15px;
+    right: 70px;
+  }
+  .header-area.header-sticky .nav li a:hover,
+  .header-area.header-sticky .nav li a.active {
+    color: #ee626b!important;
+    opacity: 1;
+  }
+  .header-area.header-sticky .nav li.search-icon a {
+    width: 100%;
+  }
+  .header-area .nav li:last-child a {
+    background-color: transparent !important;
+    font-weight: 300 !important;
+    text-transform: capitalize !important;
+  }
+  .header-area {
+    background-color: transparent;
+    padding: 0px 15px;
+    height: 80px;
+    box-shadow: none;
+    text-align: center;
+  }
+  .header-area .container {
+    padding: 0px;
+  }
+  .header-area .logo {
+    margin-left: 0px;
+    margin-top: 30px;
+  }
+  .header-area .menu-trigger {
+    display: block !important;
+  }
+  .header-area .main-nav {
+    overflow: hidden;
+  }
+  .header-area .main-nav .nav {
+    float: none;
+    width: 100%;
+    display: none;
+    -webkit-transition: all 0s ease 0s;
+    -moz-transition: all 0s ease 0s;
+    -o-transition: all 0s ease 0s;
+    transition: all 0s ease 0s;
+    margin-left: 0px;
+  }
+  .header-area .main-nav .nav li:first-child {
+    border-top: 1px solid #eee;
+  }
+  .header-area.header-sticky .nav {
+    margin-top: 100px !important;
+  }
+  .background-header.header-sticky .nav {
+    margin-top: 80px !important;
+  }
+  .header-area .main-nav .nav li {
+    width: 100%;
+    background: #fff;
+    padding-left: 0px !important;
+    padding-right: 0px !important;
+  }
+  
+}
