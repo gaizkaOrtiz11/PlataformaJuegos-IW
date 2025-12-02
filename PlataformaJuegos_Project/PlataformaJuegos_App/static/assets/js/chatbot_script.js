@@ -40,7 +40,7 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   async function getBotResponse(userMessage) {
-    const apiKey = "CLAVE"; // <- Reemplaza aquí para pruebas LOCALES (inseguro)
+    const apiKey = ""; // <- Reemplaza aquí para pruebas LOCALES (inseguro)
     // Nota: no recomendado para producción. Mejor backend/serverless.
 
     // UI: desactivar botón y mostrar estado
