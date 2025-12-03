@@ -62,7 +62,8 @@ TEMPLATES = [
             'context_processors': [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
-                'django.contrib.messages.context_processors.messages',
+                'django.contrib.messages.context_processors.messages'
+                'django.template.context_processors.i18n',
             ],
         },
     },
@@ -116,11 +117,9 @@ LANGUAGES = [
     ('es', 'Spanish'),
     ('en', 'English'),
 ]
-#Ruta de los archivos de traducción .po
 LOCALE_PATHS = [
-    BASE_DIR / 'locale',  
+    BASE_DIR / 'locale',
 ]
-
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.2/howto/static-files/

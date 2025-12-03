@@ -1,5 +1,6 @@
 {% extends 'base.html' %}
 {% load static %}
+{% load i18n %}
 
 {% block title %}DeustoGames{% endblock %}
 
@@ -11,10 +12,9 @@
                 <!-- TEXTO MAIN IZQUIERDA -->
                 <div class="banner-left">
                     <div class="caption header-text">
-                        <h6>Bienvenido a DeustoGames</h6>
-                        <h2>LA MEJOR PLATAFORMA DE VIDEOJUEGOS</h2>
-
-                        <p>DeustoGames es la web de información sobre videojuegos, jugadores profesionales y plataformas de esports con base en Bilbao, País Vasco. Te ofrecemos noticias actualizadas, perfiles de jugadores, datos de equipos y todo lo relacionado con las principales plataformas y títulos competitivos.</p>
+                        <h6>{% trans "Bienvenido a DeustoGames" %}</h6>
+                        <h2>{% trans "LA MEJOR PLATAFORMA DE VIDEOJUEGOS" %}</h2>
+                        <p>{% trans "DeustoGames es la web de información sobre videojuegos, jugadores profesionales y plataformas de esports con base en Bilbao, País Vasco. Te ofrecemos noticias actualizadas, perfiles de jugadores, datos de equipos y todo lo relacionado con las principales plataformas y títulos competitivos." %}</p>
                     </div>
                 </div>
 
@@ -40,7 +40,7 @@
                             <div class="image">
                                 <img src="{% static 'assets/images/featured-01.png' %}" alt="" style="max-width: 44px;">
                             </div>
-                            <h4>Plataformas</h4>
+                            <h4>{% trans "Plataformas" %}</h4>
                         </div>
                     </a>
                 </div>
@@ -52,7 +52,7 @@
                             <div class="image">
                                 <img src="{% static 'assets/images/featured-02.png' %}" alt="" style="max-width: 44px;">
                             </div>
-                            <h4>Jugadores</h4>
+                            <h4>{% trans "Jugadores" %}</h4>
                         </div>
                     </a>
                 </div>
@@ -64,7 +64,7 @@
                             <div class="image">
                                 <img src="{% static 'assets/images/featured-03.png' %}" alt="" style="max-width: 44px;">
                             </div>
-                            <h4>Partidas</h4>
+                            <h4>{% trans "Partidas" %}</h4>
                         </div>
                     </a>
                 </div>
@@ -76,7 +76,7 @@
                             <div class="image">
                                 <img src="{% static 'assets/images/featured-04.png' %}" alt="" style="max-width: 44px;">
                             </div>
-                            <h4>Noticias</h4>
+                            <h4>{% trans "Noticias" %}</h4>
                         </div>
                     </a>
                 </div>
@@ -89,13 +89,13 @@
         <div class="container"> 
             <!-- TÍTULO -->
             <div class="section-heading">
-                <h2>Habla con Deusti, la IA de DeustoGames</h2>
+                <h2>{% trans "Habla con Deusti, la IA de DeustoGames" %}</h2>
             </div>
 
             <!-- CHAT -->
             <div id="chatbot-container" class="hidden">
                 <div id="chatbot-header">
-                    <span>Chatbot Deusti</span>
+                    <span>{% trans "Chatbot Deusti" %}</span>
                 </div>
                 <div id="chatbot-body">
                     <div id="chatbot-messages"></div>
@@ -132,8 +132,8 @@
             <div class="row">
                 <div class="col-lg-6">
                     <div class="section-heading">
-                        <h6>Juegos más TOP</h6>
-                        <h2>Más jugados en Steam</h2>
+                        <h6>{% trans "Juegos más TOP" %}</h6>
+                        <h2>{% trans "Más jugados en Steam" %}</h2>
                     </div>
                 </div>
                 <div class="col-lg-6">
@@ -154,8 +154,8 @@
             <div class="row">
                 <div class="col-lg-12 text-center">
                     <div class="section-heading">
-                        <h6>Categorias</h6>
-                        <h2>Categorías más top</h2>
+                        <h6>{% trans "Categorías" %}</h6>
+                        <h2>{% trans "Categorías más top" %}</h2>
                     </div>
                 </div>
 
@@ -172,7 +172,7 @@
                 <!-- ESTRATEGIA -->
                 <div class="col-lg col-sm-6 col-xs-12">
                     <div class="item">
-                        <h4>Estrategia</h4>
+                        <h4>{% trans "Estrategia" %}</h4>
                         <div class="thumb">
                             <a href="{% url 'lista_juegos' %}"><img src="{% static 'assets/images/categories-04.jpg' %}" alt="Foto categoría estrategia"></a>
                         </div>
@@ -192,7 +192,7 @@
                 <!-- ACCIÓN -->
                 <div class="col-lg col-sm-6 col-xs-12">
                     <div class="item">
-                        <h4>Acción</h4>
+                        <h4>{% trans "Acción" %}</h4>
                         <div class="thumb">
                             <a href="{% url 'lista_juegos' %}"><img src="{% static 'assets/images/categories-03.jpg' %}" alt="Foto categoría acción"></a>
                         </div>
@@ -202,7 +202,7 @@
                 <!-- HISTORIA -->
                 <div class="col-lg col-sm-6 col-xs-12">
                     <div class="item">
-                        <h4>Historia</h4>
+                        <h4>{% trans "Historia" %}</h4>
                         <div class="thumb">
                             <a href="{% url 'lista_juegos' %}"><img src="{% static 'assets/images/categories-05.jpg' %}" alt="Foto categoría historia"></a>
                         </div>
