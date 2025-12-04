@@ -14,15 +14,22 @@ Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
+# project_name/urls.py
+
 from django.contrib import admin
 from django.urls import path, include
 from django.conf.urls.i18n import i18n_patterns
 
+# URLs que no se van a traducir 
 urlpatterns = [
-    path('es/', include('django.conf.urls.i18n')),
-]
-urlpatterns += [
     path('admin/', admin.site.urls),
+]
+
+# URLs que SÍ tendrán prefijo de idioma:
+# Serán accesibles en /es/plataformaApp/, /en/plataformaApp/, etc.
+urlpatterns += i18n_patterns(
     path("plataformaApp/", include("PlataformaJuegos_App.urls")),
     path("plataformas/", include("PlataformaJuegos_App.urls")),
-]
+    # Puedes añadir un path vacío para la raíz de tu app:
+    # path("", include("PlataformaJuegos_App.urls")), 
+)
