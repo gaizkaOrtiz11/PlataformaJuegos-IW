@@ -31,7 +31,7 @@ msgid ""
 "profesionales y plataformas de esports con base en Bilbao, País Vasco. Te "
 "ofrecemos noticias actualizadas, perfiles de jugadores, datos de equipos y "
 "todo lo relacionado con las principales plataformas y títulos competitivos."
-msgstr "DeustoGames is the  "
+msgstr "DeustoGames is the information website about video games, professional players, and esports platforms based in Bilbao, Basque Country. We offer you updated news, player profiles, team data, and everything related to the main competitive platforms and titles.  "
 
 #: .\templates\index.html:43
 msgid "Plataformas"
