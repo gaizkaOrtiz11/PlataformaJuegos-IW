@@ -64,7 +64,7 @@ for i, row in enumerate(rows):
     })
 
 
-# Save on CSV the specified path
+# Save CSV on the specified path
 with open(csv_path, "w", newline="", encoding="utf-8") as f:
     # Names of the columns
     writer = csv.DictWriter(f, fieldnames=["rank", "title", "current_players", "player_hours"])
