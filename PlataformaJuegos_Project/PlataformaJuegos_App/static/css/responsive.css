@@ -141,6 +141,10 @@ body {
     font-size: 14px;
     padding: 6px 12px;
   }
+  img.portrait{
+    height:fit-content;
+  
+  }
 }
 
 /* Responsive */

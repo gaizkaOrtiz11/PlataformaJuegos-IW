@@ -20,7 +20,8 @@ from django.contrib import admin
 from django.urls import path, include
 from django.conf.urls.i18n import i18n_patterns
 
-# URLs que no se van a traducir 
+
+# URLs que NO tendrán prefijo de idioma (admin, media, etc.)
 urlpatterns = [
     path('admin/', admin.site.urls),
 ]
