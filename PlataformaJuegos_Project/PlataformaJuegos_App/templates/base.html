@@ -3,7 +3,7 @@
 
     <head>
         {% load static %}
-
+        {% load i18n %}
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
@@ -55,10 +55,10 @@
 
                             <!-- MENU -->
                             <ul class="nav">
-                                <li><a href="{% url 'home' %}" >Inicio</a></li>
-                                <li><a href="{% url 'lista_plataformas' %}">Plataformas</a></li>
-                                <li><a href="{% url 'lista_juegos' %}">Juegos</a></li>
-                                <li><a href="{% url 'lista_jugadores' %}">Jugadores</a></li>
+                                <li><a href="{% url 'home' %}" >{% trans "Inicio" %}</a></li>
+                                <li><a href="{% url 'lista_plataformas' %}">{% trans "Plataformas" %}</a></li>
+                                <li><a href="{% url 'lista_juegos' %}">{% trans "Juegos" %}</a></li>
+                                <li><a href="{% url 'lista_jugadores' %}">{% trans "Jugadores" %}</a></li>
                             </ul>
 
                             <!-- MENU TRIGGER -->
@@ -84,27 +84,27 @@
             <div class="footer-container">
                 <!-- LEFT COLUMN-->
                 <div class="footer-section">
-                    <h3>Enlaces rápidos</h3>
+                    <h3>{% trans "Enlaces rápidos" %}</h3>
                     <ul>
-                        <li><a href="{% url 'lista_plataformas' %}">Plataformas</a></li>
-                        <li><a href="{% url 'lista_juegos' %}">Juegos</a></li>
-                        <li><a href="{% url 'lista_jugadores' %}">Jugadores</a></li>
+                        <li><a href="{% url 'lista_plataformas' %}">{% trans "Plataformas" %}</a></li>
+                        <li><a href="{% url 'lista_juegos' %}">{% trans "Juegos" %}</a></li>
+                        <li><a href="{% url 'lista_jugadores' %}">{% trans "Jugadores" %}</a></li>
                     </ul>
                 </div>
 
                 <!-- CENTER COLUMN -->
                 <div class="footer-section">
-                    <h3>Contacto</h3>
+                    <h3>{% trans "Contacto" %}</h3>
                     <ul>
                         <li>Email: info@luxG.com</li>
-                        <li>Teléfono: +34 912 34 56 78</li>
-                        <li>Dirección: Ave del paraiso, 7</li>
+                        <li>{% trans "Teléfono" %}: +34 912 34 56 78</li>
+                        <li>{% trans "Dirección" %}: Ave del paraiso, 7</li>
                     </ul>
                 </div>
 
                 <!-- RIGTH COLUMN -->
                 <div class="footer-section">
-                    <h3>Síguenos</h3>
+                    <h3>{% trans "Síguenos" %}</h3>
                     <ul>
                         <li><a href="https://x.com/?lang=es"><img src="/static/assets/images/X-icon.jpg" alt="X" class="social-icon"> X</a></li>
                         <li><a href="https://www.facebook.com/?locale=es_ES"><img src="/static/assets/images/facebook-icon.jpg" alt="Facebook" class="social-icon"> Facebook</a></li>
@@ -114,7 +114,7 @@
 
                 <!-- COPYRIGHT -->
                 <div class="copyright">
-                        <p>Copyright © 2025 DeustoGaming. Todos los derechos reservados.</p>
+                        <p>{% trans "Copyright © 2025 DeustoGaming. Todos los derechos reservados." %}</p>
                 </div>
             </div>
         </footer>
