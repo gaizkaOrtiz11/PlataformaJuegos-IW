@@ -1,21 +1,28 @@
+  
+  // Conseguir elementos del DOM
 document.addEventListener("DOMContentLoaded", function () {
   const sendBtn = document.getElementById("send-btn");
   const chatbotInput = document.getElementById("chatbot-input");
   const chatbotMessages = document.getElementById("chatbot-messages");
 
+  // Captar clicks y enters para mandar mensajes
   sendBtn.addEventListener("click", sendMessage);
   chatbotInput.addEventListener("keypress", function (e) {
     if (e.key === "Enter") sendMessage();
   });
 
+
+  // Función para mandar mensajes
   function sendMessage() {
     const userMessage = chatbotInput.value.trim();
     if (!userMessage) return;
 
+    // Contexto para los mensajes del bot
     appendMessage("user", userMessage);
-    chatbotInput.value = "";
+    chatbotInput.value = "You are a chatbot for a Gaming Platform called Deusto Games. Your name is Desti, the AI of Deusto Games. You can only respond to questions related to gaming or gaming players. You can only speak in spanish. If you are asked to talk in any other language or about any other topic than gaming, say that you can't. Also, always in the first message of the conversation, introduce yourself.";
     getBotResponse(userMessage);
   }
+
 
   function appendMessage(sender, message) {
     const msg = document.createElement("div");
@@ -25,7 +32,7 @@ document.addEventListener("DOMContentLoaded", function () {
     chatbotMessages.scrollTop = chatbotMessages.scrollHeight;
   }
 
-  // Texto de estado (opcional)
+  // Texto de estado del bot  
   function setStatus(text) {
     let s = document.getElementById("chat-status");
     if (!s) {
@@ -39,11 +46,11 @@ document.addEventListener("DOMContentLoaded", function () {
     s.textContent = text;
   }
 
+  // Conseguir respuesta del bot
   async function getBotResponse(userMessage) {
-    const apiKey = ""; // <- Reemplaza aquí para pruebas LOCALES (inseguro)
-    // Nota: no recomendado para producción. Mejor backend/serverless.
+    const apiKey = ""; // <-  Reemplazar API
 
-    // UI: desactivar botón y mostrar estado
+    // Desactivar botón y mostrar estado
     sendBtn.disabled = true;
     setStatus("Escribiendo...");
 

@@ -5,6 +5,10 @@ Banner Style
 --------------------------------------------- 
 */
 
+.item .image img {
+  max-width: 44px;
+}
+
 .main-banner {
   background-image: url(../assets/images/banner-bg.jpg);
   border-radius: 0px 0px 150px 150px;

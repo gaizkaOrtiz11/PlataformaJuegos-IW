@@ -6,7 +6,7 @@ from pathlib import Path
 
 # Path to save the CSV
 csv_path = Path(
-    r"C:\Users\asher\Desktop\universidad\ingenieria_web\PlataformaJuegos-IW\PlataformaJuegos_Project\PlataformaJuegos_App\static\scrap\trending_games.csv"
+    r"\PlataformaJuegos_Project\PlataformaJuegos_App\static\scrap\trending_games.csv"
 )
 
 URL = "https://42matters.com/most-popular-mobile-games-spain"
@@ -45,6 +45,7 @@ for i, row in enumerate(rows):
 
 # Save CSV on the specified path
 with open(csv_path, "w", newline="", encoding="utf-8") as f:
+    # Names of the columns
     writer = csv.DictWriter(f, fieldnames=["rank", "title", "picture"])
     writer.writeheader()
     writer.writerows(data)
