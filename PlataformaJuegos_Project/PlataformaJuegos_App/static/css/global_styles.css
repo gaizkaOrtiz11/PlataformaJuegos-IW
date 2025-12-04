@@ -1,5 +1,9 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900");
 
+/* ==========================
+   RESET BÁSICO
+   ========================== */
+
 * {
   margin: 0;
   padding: 0;
@@ -8,17 +12,27 @@
   box-sizing: border-box;
 }
 
-ul, li {
-  padding: 0;
+ul,
+li {
   margin: 0;
+  padding: 0;
   list-style: none;
 }
 
-html, body {
+/* ==========================
+   TIPOGRAFÍA / BASE
+   ========================== */
+
+html,
+body {
   font-family: 'Poppins', sans-serif;
   -ms-text-size-adjust: 100%;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  overflow-x: hidden;
 }
 
 a {
@@ -26,14 +40,19 @@ a {
 }
 
 ul {
-  margin-bottom: 0px;
+  margin-bottom: 0;
 }
 
-h1, h2, h3, h4, h5, h6 {
-  color: #2d2d2d;
-  margin-top: 0px;
-  margin-bottom: 0px;
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin-top: 0;
+  margin-bottom: 0;
   font-weight: 700;
+  color: #2d2d2d;
 }
 
 p {
@@ -42,32 +61,27 @@ p {
   color: #727272;
 }
 
+/* ==========================
+   IMÁGENES
+   ========================== */
+
 img {
   width: 100%;
   object-fit: cover;
   overflow: hidden;
 }
-img.smallLogo{
+
+img.smallLogo {
   width: 50px;
 }
-img.portrait{
-  height:300px;
 
-}
 
-/* 
----------------------------------------------
-Global Styles
---------------------------------------------- 
-*/
-html,
-body {
-  font-family: 'Poppins', sans-serif;
-}
-
+/* ==========================
+   GLOBAL LAYOUT / SECCIONES
+   ========================== */
 
 .section {
-  margin-top: 120px
+  margin-top: 120px;
 }
 
 .section-heading {
@@ -75,8 +89,8 @@ body {
 }
 
 .section-heading h2 {
-  text-transform: capitalize;
   margin-top: 30px;
+  text-transform: capitalize;
   line-height: 44px;
 }
 
@@ -90,6 +104,11 @@ body {
   text-transform: uppercase;
 }
 
+
+/* ==========================
+   BANNER (TEXTOS)
+   ========================== */
+
 .banner-left .caption h6 {
   color: #8ec5f3;
   font-size: 30px;
@@ -97,24 +116,29 @@ body {
 
 .banner-left .caption h2 {
   font-size: 50px;
-  color: white !important;
+  color: #fff !important;
 }
 
 .banner-left .caption p {
-  color: white !important;
+  color: #fff !important;
 }
+
+
+/* ==========================
+   BOTONES PRINCIPALES
+   ========================== */
 
 .main-button a {
   display: inline-block;
+  height: 50px;
+  line-height: 50px;
+  padding: 0 30px;
+  border-radius: 25px;
   background-color: #ee626b;
-  text-transform: uppercase;
   color: #fff;
   font-size: 14px;
   font-weight: 600;
-  height: 50px;
-  line-height: 50px;
-  padding: 0px 30px;
-  border-radius: 25px;
+  text-transform: uppercase;
   transition: all .3s;
 }
 
