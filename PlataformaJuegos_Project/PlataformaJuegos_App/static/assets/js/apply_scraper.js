@@ -62,7 +62,6 @@ function createTrendingGameHTML(game) {
                     <span class="rank-badge-trending">#${game.rank}</span>
                 </div>
                 <div class="down-content">
-                    <span class="category">Trending</span>
                     <h4>${game.title}</h4>
                 </div>
             </div>
@@ -82,13 +81,12 @@ function createMostPlayedGameHTML(game) {
                     <h4>${game.title}</h4>
                     <div class="stats">
                         <span class="stat-item">
-                            <i class="fa fa-users"></i> ${formatNumber(game.current_players)} de jugadores actualmente
+                            <i class="fa fa-users"></i> ${formatNumber(game.current_players)} jugadores actualmente
                         </span>
                         <span class="stat-item">
-                            <i class="fa fa-clock-o"></i> ${formatNumber(game.player_hours)} de horas jugadas
+                            <i class="fa fa-clock-o"></i> ${formatNumber(game.player_hours)} horas jugadas
                         </span>
                     </div>
-                    <a href="#"><span>Explore</span></a>
                 </div>
             </div>
     `;
