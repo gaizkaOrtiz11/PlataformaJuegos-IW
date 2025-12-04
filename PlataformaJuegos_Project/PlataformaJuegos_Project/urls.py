@@ -21,16 +21,12 @@ from django.urls import path, include
 from django.conf.urls.i18n import i18n_patterns
 
 
-# URLs que NO tendrán prefijo de idioma (admin, media, etc.)
+# URLs que NO tendrán prefijo de idioma
 urlpatterns = [
     path('admin/', admin.site.urls),
 ]
 
-# URLs que SÍ tendrán prefijo de idioma:
-# Serán accesibles en /es/plataformaApp/, /en/plataformaApp/, etc.
+# URLs que SÍ tendrán prefijo de idioma
 urlpatterns += i18n_patterns(
-    path("plataformaApp/", include("PlataformaJuegos_App.urls")),
-    path("plataformas/", include("PlataformaJuegos_App.urls")),
-    # Puedes añadir un path vacío para la raíz de tu app:
-    # path("", include("PlataformaJuegos_App.urls")), 
+    path("", include("PlataformaJuegos_App.urls"))
 )
