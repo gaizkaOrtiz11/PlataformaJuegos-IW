@@ -8,7 +8,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 
-        <title>{% block title %}Plataforma juegos{% endblock %}</title>
+        <title>{% block title %}DeustoGames{% endblock %}</title>
 
         <!-- BOOTSTRAP CORE CSS -->
         <link href="{% static 'vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
@@ -50,7 +50,7 @@
                         <nav class="main-nav">
                             <!-- LOGO -->
                             <a href="{% url 'home' %}" class="logo">
-                                <img src="{% static 'assets/images/logo.png' %}" alt="DeustoGames Logo" style="width: 158px;">
+                                <img src="{% static 'assets/images/logo.png' %}" alt="Logotipo de DeustoGames" style="width: 158px;">
                             </a>
 
                             <!-- MENU -->
@@ -59,7 +59,6 @@
                                 <li><a href="{% url 'lista_plataformas' %}">Plataformas</a></li>
                                 <li><a href="{% url 'lista_juegos' %}">Juegos</a></li>
                                 <li><a href="{% url 'lista_jugadores' %}">Jugadores</a></li>
-                                <li><a href="#">Translate 🇪🇸</a></li>
                             </ul>
 
                             <!-- MENU TRIGGER -->
@@ -107,9 +106,21 @@
                 <div class="footer-section">
                     <h3>Síguenos</h3>
                     <ul>
-                        <li><a href="https://x.com/?lang=es"><img src="/static/assets/images/X-icon.jpg" alt="X" class="social-icon"> X</a></li>
-                        <li><a href="https://www.facebook.com/?locale=es_ES"><img src="/static/assets/images/facebook-icon.jpg" alt="Facebook" class="social-icon"> Facebook</a></li>
-                        <li><a href="https://www.instagram.com/"><img src="/static/assets/images/instagram-icon.jpg" alt="Instagram" class="social-icon"> Instagram</a></li>
+                        <li>
+                            <a href="https://x.com/?lang=es">
+                                <img src="/static/assets/images/X-icon.jpg" alt="Icono de X" class="social-icon"> X
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://www.facebook.com/?locale=es_ES">
+                                <img src="/static/assets/images/facebook-icon.jpg" alt="Icono de Facebook" class="social-icon"> Facebook
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://www.instagram.com/">
+                                <img src="/static/assets/images/instagram-icon.jpg" alt="Icono de Instagram" class="social-icon"> Instagram
+                            </a>
+                        </li>
                     </ul>
                 </div>
 
