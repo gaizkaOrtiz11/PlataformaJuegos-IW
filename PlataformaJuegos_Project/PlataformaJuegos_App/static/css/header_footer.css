@@ -22,6 +22,10 @@ Header Style
   max-width: 250px;
 }
 
+.logo img {
+    width: 158px;
+}
+
 .header-area {
   position: absolute;
   background-color: transparent;
