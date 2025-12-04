@@ -1,0 +1,82 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-12-03 22:06+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+#: .\PlataformaJuegos_App\templates\index.html:15
+msgid "Bienvenido a DeustoGames"
+msgstr ""
+
+#: .\PlataformaJuegos_App\templates\index.html:16
+msgid "LA MEJOR PLATAFORMA DE VIDEOJUEGOS"
+msgstr ""
+
+#: .\PlataformaJuegos_App\templates\index.html:17
+msgid ""
+"DeustoGames es la web de información sobre videojuegos, jugadores "
+"profesionales y plataformas de esports con base en Bilbao, País Vasco. Te "
+"ofrecemos noticias actualizadas, perfiles de jugadores, datos de equipos y "
+"todo lo relacionado con las principales plataformas y títulos competitivos."
+msgstr ""
+
+#: .\PlataformaJuegos_App\templates\index.html:43
+msgid "Plataformas"
+msgstr ""
+
+#: .\PlataformaJuegos_App\templates\index.html:55
+msgid "Jugadores"
+msgstr ""
+
+#: .\PlataformaJuegos_App\templates\index.html:67
+msgid "Partidas"
+msgstr ""
+
+#: .\PlataformaJuegos_App\templates\index.html:79
+msgid "Noticias"
+msgstr ""
+
+#: .\PlataformaJuegos_App\templates\index.html:92
+msgid "Habla con Deusti, la IA de DeustoGames"
+msgstr ""
+
+#: .\PlataformaJuegos_App\templates\index.html:98
+msgid "Chatbot Deusti"
+msgstr ""
+
+#: .\PlataformaJuegos_App\templates\index.html:135
+msgid "Juegos más TOP"
+msgstr ""
+
+#: .\PlataformaJuegos_App\templates\index.html:136
+msgid "Más jugados en Steam"
+msgstr ""
+
+#: .\PlataformaJuegos_App\templates\index.html:157
+msgid "Categorías"
+msgstr ""
+
+#: .\PlataformaJuegos_App\templates\index.html:158
+msgid "Categorías más top"
+msgstr ""
+
+#: .\PlataformaJuegos_App\templates\index.html:175
+msgid "Estrategia"
+msgstr ""
+
+#: .\PlataformaJuegos_App\templates\index.html:185
+msgid "MOBA"
+msgstr ""
