@@ -26,69 +26,83 @@
 <br><br>
 <a href="{% url 'home' %}"> Volver atrás </a> -->
 
-  <div class="page-heading header-text">
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-12">
-          <h3>Juegos</h3>
-          <span class="breadcrumb"><a href="/plataformas/">Inicio</a> > Juegos</span>
+<div class="page-heading header-text">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12">
+        <h3>Juegos</h3>
+        <span class="breadcrumb"><a href="/plataformas/">Inicio</a> > Juegos</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="section trending">
+  <div class="container">
+    <ul class="trending-filter">
+      <li>
+        <a class="is_active" href="#!" data-filter="*">Show All</a>
+      </li>
+      <li>
+        <a href="#!" data-filter="3">PEGI 3</a>
+      </li>
+      <li>
+        <a href="#!" data-filter="7">PEGI 7</a>
+      </li>
+      <li>
+        <a href="#!" data-filter="12">PEGI 12</a>
+      </li>
+      <li>
+        <a href="#!" data-filter="16">PEGI 16</a>
+      </li>
+      <li>
+        <a href="#!" data-filter="18">PEGI 18</a>
+      </li>
+    </ul>
+    <div class="row trending-box">
+
+      {% for juego in page_obj %}
+
+
+      <div class="col-lg-3 col-md-6 align-self-center mb-30 trending-items col-md-6 adv">
+        <div class="item">
+          <div class="thumb">
+            <a href="{% url 'detalle_juego' juego.pk %}"><img src="{{juego.logo}}" alt="logo del juego" width="150px"
+                height="150px"></a>
+            <!--<span class="price"><em>$36</em>$24</span>-->
+          </div>
+          <div class="down-content">
+            <span class="category" data-PEGI="{{juego.PEGI}}">{{juego.companyia}}</span>
+            <h4>{{ juego.nombre }}</h4>
+          </div>
         </div>
+      </div>
+      {% endfor %}
+    </div>
+    <div class="row">
+      <div class="col-lg-12">
+        <ul class="pagination">
+
+          {% if page_obj.has_previous %}
+          <li><a href="?page={{ page_obj.previous_page_number }}">&lt;</a></li>
+          {% endif %}
+
+          {% for num in page_obj.paginator.page_range %}
+          {% if num == page_obj.number %}
+          <li><a class="is_active">{{ num }}</a></li>
+          {% else %}
+          <li><a href="?page={{ num }}">{{ num }}</a></li>
+          {% endif %}
+          {% endfor %}
+
+          {% if page_obj.has_next %}
+          <li><a href="?page={{ page_obj.next_page_number }}">&gt;</a></li>
+          {% endif %}
+
+        </ul>
+
       </div>
     </div>
   </div>
 
-  <div class="section trending">
-    <div class="container">
-      <ul class="trending-filter">
-        <li>
-          <a class="is_active" href="#!" data-filter="*">Show All</a>
-        </li>
-        <li>
-          <a href="#!" data-filter="3">PEGI 3</a>
-        </li>
-        <li>
-          <a href="#!" data-filter="7">PEGI 7</a>
-        </li>
-        <li>
-          <a href="#!" data-filter="12">PEGI 12</a>
-        </li>
-        <li>
-          <a href="#!" data-filter="16">PEGI 16</a>
-        </li>
-        <li>
-          <a href="#!" data-filter="18">PEGI 18</a>
-        </li>
-      </ul>
-      <div class="row trending-box">
-
-        {% for juego in juegos %}
-
-
-        <div class="col-lg-3 col-md-6 align-self-center mb-30 trending-items col-md-6 adv">
-          <div class="item">
-            <div class="thumb">
-              <a href="{% url 'detalle_juego' juego.pk %}"><img src="{{juego.logo}}" alt="logo del juego" width="150px" height="150px"></a>
-              <!--<span class="price"><em>$36</em>$24</span>-->
-            </div>
-            <div class="down-content">
-              <span class="category" data-PEGI="{{juego.PEGI}}">{{juego.companyia}}</span>
-              <h4>{{ juego.nombre }}</h4>
-            </div>
-          </div>
-        </div>
-        {% endfor %}
-      </div>
-    <div class="row">
-        <div class="col-lg-12">
-          <ul class="pagination">
-          <li><a href="#"> &lt; </a></li>
-            <li><a class="is_active" href="#">1</a></li>
-            <li><a href="#">2</a></li>
-            <li><a href="#">3</a></li>
-            <li><a href="#"> &gt; </a></li>
-          </ul>
-        </div>
-      </div>
-  </div>
-
-{% endblock %}
+  {% endblock %}
