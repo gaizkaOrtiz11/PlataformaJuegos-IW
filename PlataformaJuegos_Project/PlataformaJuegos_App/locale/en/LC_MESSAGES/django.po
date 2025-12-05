@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-12-03 22:45+0100\n"
+"POT-Creation-Date: 2025-12-05 21:30+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,66 +17,178 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-#: .\templates\index.html:15
+
+#: .\PlataformaJuegos_App\templates\base.html:54
+msgid "Inicio"
+msgstr "Home"
+
+#: .\PlataformaJuegos_App\templates\base.html:55
+#: .\PlataformaJuegos_App\templates\base.html:80
+#: .\PlataformaJuegos_App\templates\index.html:43
+msgid "Plataformas"
+msgstr "Platforms"
+
+#: .\PlataformaJuegos_App\templates\base.html:56
+#: .\PlataformaJuegos_App\templates\base.html:81
+msgid "Juegos"
+msgstr "Games"
+
+#: .\PlataformaJuegos_App\templates\base.html:57
+#: .\PlataformaJuegos_App\templates\base.html:82
+#: .\PlataformaJuegos_App\templates\index.html:55
+msgid "Jugadores"
+msgstr "Players"
+
+#: .\PlataformaJuegos_App\templates\base.html:78
+msgid "Enlaces rápidos"
+msgstr "Quick links"
+
+#: .\PlataformaJuegos_App\templates\base.html:90
+msgid "Email"
+msgstr "Email"
+
+#: .\PlataformaJuegos_App\templates\base.html:91
+msgid "Teléfono"
+msgstr "Phone number"
+
+#: .\PlataformaJuegos_App\templates\base.html:92
+msgid "Dirección"
+msgstr "Address"
+
+#: .\PlataformaJuegos_App\templates\base.html:98
+msgid "Síguenos"
+msgstr "Follow us"
+
+#: .\PlataformaJuegos_App\templates\base.html:120
+msgid "Todos los derechos reservados."
+msgstr "All rights reserved"
+
+#: .\PlataformaJuegos_App\templates\index.html:15
 msgid "Bienvenido a DeustoGames"
 msgstr "Welcome to DeustoGames"
 
-#: .\templates\index.html:16
+#: .\PlataformaJuegos_App\templates\index.html:16
 msgid "LA MEJOR PLATAFORMA DE VIDEOJUEGOS"
 msgstr "THE BEST VIDEOGAME PLATFORM"
 
-#: .\templates\index.html:17
+#: .\PlataformaJuegos_App\templates\index.html:17
 msgid ""
 "DeustoGames es la web de información sobre videojuegos, jugadores "
 "profesionales y plataformas de esports con base en Bilbao, País Vasco. Te "
 "ofrecemos noticias actualizadas, perfiles de jugadores, datos de equipos y "
 "todo lo relacionado con las principales plataformas y títulos competitivos."
-msgstr "DeustoGames is the information website about video games, professional players, and esports platforms based in Bilbao, Basque Country. We offer you updated news, player profiles, team data, and everything related to the main competitive platforms and titles.  "
-
-#: .\templates\index.html:43
-msgid "Plataformas"
-msgstr "Platforms"
-
-#: .\templates\index.html:55
-msgid "Jugadores"
-msgstr "Players"
+msgstr ""
+"DeustoGames is the information website about video games, professional "
+"players, and esports platforms based in Bilbao, Basque Country. We offer you "
+"updated news, player profiles, team data, and everything related to the main "
+"competitive platforms and titles.  "
 
 #: .\templates\index.html:67
+#: .\PlataformaJuegos_App\templates\index.html:67
 msgid "Partidas"
 msgstr "Games"
 
-#: .\templates\index.html:79
+#: .\PlataformaJuegos_App\templates\index.html:79
 msgid "Noticias"
 msgstr "News"
 
-#: .\templates\index.html:92
+#: .\PlataformaJuegos_App\templates\index.html:92
 msgid "Habla con Deusti, la IA de DeustoGames"
 msgstr "Speak with Deusti, DeustoGame's AI"
 
-#: .\templates\index.html:98
+#: .\PlataformaJuegos_App\templates\index.html:98
 msgid "Chatbot Deusti"
 msgstr "Deusti Chatbot"
 
-#: .\templates\index.html:135
-msgid "Juegos más TOP"
+#: .\PlataformaJuegos_App\templates\index.html:105
+msgid "Escribe un mensaje..."
+msgstr "Write your message"
+
+#: .\PlataformaJuegos_App\templates\index.html:106
+msgid "Enviar"
+msgstr "Send"
+
+#: .\PlataformaJuegos_App\templates\index.html:118
+msgid "Tendencias"
+msgstr "Trends"
+
+#: .\PlataformaJuegos_App\templates\index.html:119
+msgid "Juegos en tendencias"
 msgstr "Trending Games"
 
-#: .\templates\index.html:136
-msgid "Más jugados en Steam"
-msgstr "Steam's Most Played Games"
+#: .\PlataformaJuegos_App\templates\index.html:135
+msgid "Juegos más TOP"
+msgstr "Top Games"
 
-#: .\templates\index.html:157
+#: .\PlataformaJuegos_App\templates\index.html:136
+msgid "Más jugados en Steam"
+msgstr "Most played games in steam"
+
+#: .\PlataformaJuegos_App\templates\index.html:156
 msgid "Categorías"
 msgstr "Categories"
 
-#: .\templates\index.html:158
+#: .\PlataformaJuegos_App\templates\index.html:157
 msgid "Categorías más top"
-msgstr "Best Categories"
+msgstr "Top Categories"
 
-#: .\templates\index.html:175
+#: .\PlataformaJuegos_App\templates\index.html:174
 msgid "Estrategia"
 msgstr "Strategy"
 
-#: .\templates\index.html:185
-msgid "MOBA"
-msgstr "MOBA"
+#: .\PlataformaJuegos_App\templates\index.html:194
+msgid "Acción"
+msgstr "Action"
+
+#: .\PlataformaJuegos_App\templates\index.html:204
+msgid "Historia"
+msgstr "History"
+
+#: .\PlataformaJuegos_App\templates\index.html:226
+msgid "Destacado"
+msgstr "Featured"
+
+#: .\PlataformaJuegos_App\templates\index.html:227
+msgid "Noticias, lanzamientos y contenido <em>exclusivo</em> cada semana."
+msgstr "News, game releases and <em>exclusive<em> content every week"
+
+#: .\PlataformaJuegos_App\templates\index.html:229
+msgid ""
+"Únete a nuestra comunidad y recibe lo mejor de los videojuegos directamente "
+"en tu inbox."
+msgstr "Join our community and get the best news directly in your inbox "
+
+#: .\PlataformaJuegos_App\templates\index.html:242
+msgid "NEWSLETTER"
+msgstr "NEWSLETTER"
+
+#: .\PlataformaJuegos_App\templates\index.html:243
+msgid "No te pierdas nada del mundo gamer, <em>suscríbete hoy</em>."
+msgstr "Stay up to date with the gaming world, <em>subscribe today</em>"
+
+#: .\PlataformaJuegos_App\templates\index.html:248
+msgid "Tu correo electrónico..."
+msgstr "Your e-mail adress..."
+
+#: .\PlataformaJuegos_App\templates\index.html:249
+msgid "Suscríbete"
+msgstr "Subscribe"
+
+#~ msgid "Compañia:"
+#~ msgstr "Company"
+
+#~ msgid "Fecha de lanzamiento:"
+#~ msgstr "Release date"
+
+#, fuzzy
+#~| msgid "Plataformas"
+#~ msgid "Plataformas:"
+#~ msgstr "Platforms"
+
+#, fuzzy
+#~| msgid "Plataformas"
+#~ msgid "plataformas/"
+#~ msgstr "Platforms"
+
+#~ msgid "MOBA"
+#~ msgstr "MOBA"
