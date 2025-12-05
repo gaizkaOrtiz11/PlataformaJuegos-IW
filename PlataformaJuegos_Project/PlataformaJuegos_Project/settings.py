@@ -105,6 +105,7 @@ LANGUAGES = [
     ('es', 'Spanish'),
     ('en', 'English'),
 ]
+# Ruta de los archivos de traducción(Django buscará aquí)
 LOCALE_PATHS = [
     BASE_DIR / 'locale',
 ]
