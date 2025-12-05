@@ -96,13 +96,13 @@ function createMostPlayedGameHTML(game) {
 // CARGAR JUEGOS EN TENDENCIA
 // ==========================================
 async function loadTrendingGames() {
-    console.log('📱 Cargando juegos en tendencia...');
+    console.log(' Cargando juegos en tendencia...');
     
     const games = await loadCSV('/static/scrap/trending_games.csv');
     const container = document.getElementById('trending-games-container');
     
     if (!container) {
-        console.error('❌ Contenedor "trending-games-container" no encontrado');
+        console.error(' Contenedor "trending-games-container" no encontrado');
         return;
     }
     
@@ -119,20 +119,20 @@ async function loadTrendingGames() {
         container.insertAdjacentHTML('beforeend', createTrendingGameHTML(game));
     });
     
-    console.log(`✅ ${games.length} juegos en tendencia cargados`);
+    console.log(` ${games.length} juegos en tendencia cargados`);
 }
 
 // ==========================================
 // CARGAR JUEGOS MÁS JUGADOS
 // ==========================================
 async function loadMostPlayedGames() {
-    console.log('🎮 Cargando juegos más jugados...');
+    console.log(' Cargando juegos más jugados...');
     
     const games = await loadCSV('/static/scrap/top6_steamcharts.csv');
     const container = document.getElementById('most-played-games-container');
     
     if (!container) {
-        console.error('❌ Contenedor "most-played-games-container" no encontrado');
+        console.error(' Contenedor "most-played-games-container" no encontrado');
         return;
     }
     

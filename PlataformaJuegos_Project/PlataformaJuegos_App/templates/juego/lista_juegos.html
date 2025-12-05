@@ -44,13 +44,19 @@
           <a class="is_active" href="#!" data-filter="*">Show All</a>
         </li>
         <li>
-          <a href="#!" data-filter=".adv">Adventure</a>
+          <a href="#!" data-filter="3">PEGI 3</a>
         </li>
         <li>
-          <a href="#!" data-filter=".str">Strategy</a>
+          <a href="#!" data-filter="7">PEGI 7</a>
         </li>
         <li>
-          <a href="#!" data-filter=".rac">Racing</a>
+          <a href="#!" data-filter="12">PEGI 12</a>
+        </li>
+        <li>
+          <a href="#!" data-filter="16">PEGI 16</a>
+        </li>
+        <li>
+          <a href="#!" data-filter="18">PEGI 18</a>
         </li>
       </ul>
       <div class="row trending-box">
@@ -65,7 +71,7 @@
               <!--<span class="price"><em>$36</em>$24</span>-->
             </div>
             <div class="down-content">
-              <span class="category">{{juego.companyia}}</span>
+              <span class="category" data-PEGI="{{juego.PEGI}}">{{juego.companyia}}</span>
               <h4>{{ juego.nombre }}</h4>
             </div>
           </div>
