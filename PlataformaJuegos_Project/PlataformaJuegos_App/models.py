@@ -26,8 +26,7 @@ class Juego(models.Model):
     PEGI = models.IntegerField(blank=True, null=True)  # Edad recomendada
     plataformas = models.ManyToManyField(Plataforma,
                                    related_name="juegos",
-                                   null=True,
-                                   blank=True)
+                                   null=True, blank=True)
 
     class Meta:
         verbose_name = "Juego"
@@ -48,8 +47,7 @@ class Jugador(models.Model):
     anyo_nacimiento = models.DateField()
     juego = models.ForeignKey(Juego,
                               on_delete=models.CASCADE,
-                              null=True,
-                              blank=True,
+                              null=True, blank=True,
                               related_name="jugadores")
 
     class Meta:
