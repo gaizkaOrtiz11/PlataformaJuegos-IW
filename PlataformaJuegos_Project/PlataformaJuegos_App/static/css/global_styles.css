@@ -54,6 +54,10 @@ h6 {
   font-weight: 700;
   color: #2d2d2d;
 }
+h5.filter-title {
+  margin-bottom: 20px;
+  text-align: center;
+}
 
 p {
   font-size: 14px;

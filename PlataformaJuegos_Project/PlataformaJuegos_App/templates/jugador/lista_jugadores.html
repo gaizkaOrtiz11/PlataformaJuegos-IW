@@ -18,6 +18,18 @@
 
 <div class="section trending">
   <div class="container">
+    <h5 class = "filter-title">Filtrar página actual:</h5>
+    <ul class="trending-filter">
+      <li>
+        <a class="is_active" href="#!" data-filter="*">Show All</a>
+      </li>
+      <li>
+        <a href="#!" data-filter="Profesional">Profesional</a>
+      </li>
+      <li>
+        <a href="#!" data-filter="No profesional">No Profesional</a>
+      </li>
+    </ul>
     <div class="row trending-box">
       {% for jugador in jugadores %}
 
@@ -27,7 +39,6 @@
           <div class="thumb">
             <a href="{% url 'detalle_jugador' jugador.pk %}"><img class="portrait" src="{{jugador.foto_cara}}"
                 alt="foto cara" width="150px" height="150px"></a>
-            <!--<span class="price"><em>$36</em>$24</span>-->
           </div>
           <div class="down-content">
             {% if jugador.es_profesional %}
