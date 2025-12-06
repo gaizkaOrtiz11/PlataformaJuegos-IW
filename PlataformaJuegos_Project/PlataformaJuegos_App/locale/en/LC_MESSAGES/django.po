@@ -180,15 +180,5 @@ msgstr "Subscribe"
 #~ msgid "Fecha de lanzamiento:"
 #~ msgstr "Release date"
 
-#, fuzzy
-#~| msgid "Plataformas"
-#~ msgid "Plataformas:"
-#~ msgstr "Platforms"
-
-#, fuzzy
-#~| msgid "Plataformas"
-#~ msgid "plataformas/"
-#~ msgstr "Platforms"
-
 #~ msgid "MOBA"
 #~ msgstr "MOBA"
