@@ -102,8 +102,11 @@
                 </div>
 
                 <div id="chatbot-input-container">
-                    <input type="text" id="chatbot-input" placeholder="Escribe un mensaje...">
-                    <button id="send-btn">Enviar</button>
+                    <input
+                        type="text"
+                        id="chatbot-input"
+                        placeholder="{% trans 'Escribe un mensaje...' %}">
+                    <button id="send-btn">{% trans "Enviar" %}</button>
                 </div>
             </div>
         </div>
@@ -115,14 +118,14 @@
             <div class="row">
                 <div class="col-lg-6">
                     <div class="section-heading">
-                        <h6>Tendencias</h6>
-                        <h2>Juegos de móbil en tendencias</h2>
+                        <h6>{% trans "Tendencias" %}</h6>
+                        <h2>{% trans "Juegos de móbil en tendencias" %}</h2>
                     </div>
                 </div>
             </div>
 
             <!-- CONTENEDOR DINÁMICO TENDENCIAS (JS) -->
-            <div class="row" id="trending-games-container"> </div>
+            <div class="row" id="trending-games-container"></div>
         </div>
     </div>
 
@@ -132,8 +135,8 @@
             <div class="row">
                 <div class="col-lg-6">
                     <div class="section-heading">
-                        <h6>Juegos más TOP</h6>
-                        <h2>Más jugados en Steam</h2>
+                        <h6>{% trans "Juegos más TOP" %}</h6>
+                        <h2>{% trans "Más jugados en Steam" %}</h2>
                     </div>
                 </div>
                 <div class="col-lg-6">
@@ -143,7 +146,7 @@
             </div>
 
             <!-- CONTENEDOR DINÁMICO MÁS JUGADOS (JS) -->
-            <div class="row" id="most-played-games-container"> </div>
+            <div class="row" id="most-played-games-container"></div>
         </div>
     </div>
 
@@ -163,7 +166,9 @@
                     <div class="item">
                         <h4>Shooter</h4>
                         <div class="thumb">
-                            <a href="{% url 'lista_juegos' %}"><img src="{% static 'assets/images/categories-01.jpg' %}" alt="Imagen de la categoría shooter"></a>
+                            <a href="{% url 'lista_juegos' %}">
+                                <img src="{% static 'assets/images/categories-01.jpg' %}" alt="Imagen de la categoría shooter">
+                            </a>
                         </div>
                     </div>
                 </div>
@@ -173,7 +178,9 @@
                     <div class="item">
                         <h4>{% trans "Estrategia" %}</h4>
                         <div class="thumb">
-                            <a href="{% url 'lista_juegos' %}"><img src="{% static 'assets/images/categories-04.jpg' %}" alt="Imagen de la categoría estrategia"></a>
+                            <a href="{% url 'lista_juegos' %}">
+                                <img src="{% static 'assets/images/categories-04.jpg' %}" alt="Imagen de la categoría estrategia">
+                            </a>
                         </div>
                     </div>
                 </div>
@@ -183,7 +190,9 @@
                     <div class="item">
                         <h4>MOBA</h4>
                         <div class="thumb">
-                            <a href="{% url 'lista_juegos' %}"><img src="{% static 'assets/images/categories-02.jpg' %}" alt="Imagen de la categoría MOBA"></a>
+                            <a href="{% url 'lista_juegos' %}">
+                                <img src="{% static 'assets/images/categories-02.jpg' %}" alt="Imagen de la categoría MOBA">
+                            </a>
                         </div>
                     </div>
                 </div>
@@ -193,7 +202,9 @@
                     <div class="item">
                         <h4>{% trans "Acción" %}</h4>
                         <div class="thumb">
-                            <a href="{% url 'lista_juegos' %}"><img src="{% static 'assets/images/categories-03.jpg' %}" alt="Imagen de la categoría acción"></a>
+                            <a href="{% url 'lista_juegos' %}">
+                                <img src="{% static 'assets/images/categories-03.jpg' %}" alt="Imagen de la categoría acción">
+                            </a>
                         </div>
                     </div>
                 </div>
@@ -203,7 +214,9 @@
                     <div class="item">
                         <h4>{% trans "Historia" %}</h4>
                         <div class="thumb">
-                            <a href="{% url 'lista_juegos' %}"><img src="{% static 'assets/images/categories-05.jpg' %}" alt="Imagen de la categoría historia"></a>
+                            <a href="{% url 'lista_juegos' %}">
+                                <img src="{% static 'assets/images/categories-05.jpg' %}" alt="Imagen de la categoría historia">
+                            </a>
                         </div>
                     </div>
                 </div>
@@ -223,10 +236,16 @@
                             <!-- TEXTO -->
                             <div class="col-lg-12">
                                 <div class="section-heading">
-                                    <h6>Destacado</h6>
-                                    <h2>Noticias, lanzamientos y contenido <em>exclusivo</em> cada semana.</h2>
+                                    <h6>{% trans "Destacado" %}</h6>
+                                    <h2>
+                                        {% blocktrans %}
+                                        Noticias, lanzamientos y contenido <em>exclusivo</em> cada semana.
+                                        {% endblocktrans %}
+                                    </h2>
                                 </div>
-                                <p>Únete a nuestra comunidad y recibe lo mejor de los videojuegos directamente en tu inbox.</p>
+                                <p>
+                                    {% trans "Únete a nuestra comunidad y recibe lo mejor de los videojuegos directamente en tu inbox." %}
+                                </p>
                             </div>
                         </div>
                     </div>
@@ -239,14 +258,23 @@
                             <div class="col-lg-12">
                                 <!-- TEXTO -->
                                 <div class="section-heading">
-                                    <h6>NEWSLETTER</h6>
-                                    <h2>No te pierdas nada del mundo gamer, <em>suscríbete hoy</em>.</h2>
+                                    <h6>{% trans "NEWSLETTER" %}</h6>
+                                    <h2>
+                                        {% blocktrans %}
+                                        No te pierdas nada del mundo gamer, <em>suscríbete hoy</em>.
+                                        {% endblocktrans %}
+                                    </h2>
                                 </div>
                                 <!-- FORMULARIO EMAIL -->
                                 <div class="search-input">
                                     <form id="subscribe" action="#">
-                                        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Tu correo electrónico...">
-                                        <button type="submit">Suscríbete</button>
+                                        <input
+                                            type="email"
+                                            class="form-control"
+                                            id="exampleInputEmail1"
+                                            aria-describedby="emailHelp"
+                                            placeholder="{% trans 'Tu correo electrónico...' %}">
+                                        <button type="submit">{% trans "Suscríbete" %}</button>
                                     </form>
                                 </div>
                             </div>
