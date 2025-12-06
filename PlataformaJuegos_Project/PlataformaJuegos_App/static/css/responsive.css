@@ -90,7 +90,6 @@
 }
 
 @media (max-width: 767px) {
-  /* Header más simple y compacto */
   .header-area {
     background-color: transparent;
     padding: 0 15px;
@@ -103,7 +102,6 @@
     padding: 0;
   }
 
-  /* Logo arriba, en flujo normal */
   .header-area .main-nav .logo {
     position: static;
     margin: 10px 0;
@@ -113,7 +111,6 @@
     top: 0;
   }
 
-  /* Nav visible, sin dropdown ni “panel” extraño */
   .header-area .main-nav {
     overflow: visible;
     flex-direction: column;
@@ -307,5 +304,55 @@
 
   #most-played-games-container .item .down-content h4 {
     font-size: 16px;
+  }
+}
+
+/* ==========================
+   CHATBOT RESPONSIVE FIXED
+   ========================== */
+
+/* Tablets */
+@media (max-width: 992px) {
+  #chatbot-container {
+    width: 90%;
+    height: 420px;
+  }
+
+  #chatbot-input-container {
+    flex-direction: row;
+  }
+
+  #chatbot-input {
+    flex: 1;
+  }
+
+  #send-btn {
+    margin-left: 10px;
+    white-space: nowrap;
+  }
+}
+
+/* Móviles */
+@media (max-width: 576px) {
+  #chatbot-container {
+    width: 95%;
+    height: 400px;
+  }
+
+  #chatbot-input-container {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+  }
+
+  #chatbot-input {
+    flex: 1;
+    min-width: 0;
+  }
+
+  #send-btn {
+    padding: 10px 15px;
+    margin-left: 0;
+    align-self: center;
   }
 }
