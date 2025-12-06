@@ -1,33 +1,29 @@
 document.addEventListener("DOMContentLoaded", () => {
+  // Get tags from the DOM
   const form = document.getElementById("subscribe");
   const emailInput = document.getElementById("exampleInputEmail1");
 
-  if (!form || !emailInput) {
-    console.warn("Formulario de suscripción no encontrado.");
-    return;
-  }
-
   form.addEventListener("submit", (event) => {
-    event.preventDefault(); // Evita recargar la página
+    event.preventDefault();  // Avoid reloading the page
 
     const email = emailInput.value.trim();
 
+    // Check for email
     if (!email) {
-      alert("Por favor, introduce un correo electrónico.");
+      alert("No has introducido un correo electrónico");
       return;
     }
 
-    // Validación mínima
-    if (!email.includes("@")) {
-      alert("El correo parece inválido.");
+    // Check for @ and .
+    if (!email.includes("@") || !email.includes(".")) {
+      alert("El correo no es válido");
       return;
     }
 
-    // Aquí podrías enviar el correo al servidor en el futuro si quieres
-
+    // If everything is right, send notification
     alert("¡Te has registrado en la newsletter de DeustoGames!");
 
-    // Limpiar campo
+    // Clear value for more emails
     emailInput.value = "";
   });
 });
