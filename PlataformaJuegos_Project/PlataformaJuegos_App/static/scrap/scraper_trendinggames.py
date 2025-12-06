@@ -8,9 +8,9 @@ csv_path = Path("trending_games.csv")
 
 URL = "https://42matters.com/most-popular-mobile-games-spain"
 
-resp = requests.get(URL, timeout=15)
+req = requests.get(URL, timeout=15)
 
-soup = BeautifulSoup(resp.text, "lxml")
+soup = BeautifulSoup(req.text, "lxml")
 
 # Get main list
 table = soup.find("ul", {"class": "subpage-block-list m-0"})
@@ -25,11 +25,9 @@ for i, row in enumerate(rows):
     # Ranking
     rank_tag = row.find("div", {"class": "subpage-block-item-counter"})
     rank = rank_tag.get_text(strip=True).strip(".") if rank_tag else ""
-
     # Name of the game
     title_tag = row.find("div", {"class": "subpage-block-item-title fw-600"})
     title = title_tag.get_text(strip=True) if title_tag else row.get_text(strip=True)
-
     # Picture
     img_tag = row.find("img")
     game_pic = img_tag["src"] if img_tag else ""

@@ -8,16 +8,14 @@ csv_path = Path("top6_steamcharts.csv")
 
 URL = "https://steamcharts.com/top"
 
-resp = requests.get(URL, timeout=15)
+req = requests.get(URL, timeout=15)
 
-soup = BeautifulSoup(resp.text, "lxml")
-
+soup = BeautifulSoup(req.text, "lxml")
 
 # Get main table
 table = soup.find("table", {"class": "common-table"})
 # Get rows (games)
 rows = table.find_all("tr")
-
 
 data = []
 for i, row in enumerate(rows):
@@ -37,10 +35,7 @@ for i, row in enumerate(rows):
     current_players = tds[2].get_text(strip=True)
     # Total hours played
     player_hours_tag = row.find("td", class_="player-hours")
-    if player_hours_tag:
-        player_hours = player_hours_tag.get_text(strip=True)
-    else:
-        player_hours = tds[-1].get_text(strip=True)
+    player_hours = player_hours_tag.get_text(strip=True) if player_hours_tag else tds[-1].get_text(strip=True)
 
     # Clean string and convert to int
     def to_int(s):
