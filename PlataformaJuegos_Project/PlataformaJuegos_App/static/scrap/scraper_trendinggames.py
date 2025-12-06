@@ -1,13 +1,10 @@
 from bs4 import BeautifulSoup
 import requests
 import csv
-import os
 from pathlib import Path
 
-# Path to save the CSV
-csv_path = Path(
-    r"\PlataformaJuegos_Project\PlataformaJuegos_App\static\scrap\trending_games.csv"
-)
+
+csv_path = Path("trending_games.csv")
 
 URL = "https://42matters.com/most-popular-mobile-games-spain"
 
@@ -49,5 +46,3 @@ with open(csv_path, "w", newline="", encoding="utf-8") as f:
     writer = csv.DictWriter(f, fieldnames=["rank", "title", "picture"])
     writer.writeheader()
     writer.writerows(data)
-
-print(f"CSV saved in: {csv_path}")

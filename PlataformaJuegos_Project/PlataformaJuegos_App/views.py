@@ -13,6 +13,7 @@ class ListaPlataformasView(ListView):
     template_name = "plataforma/lista_plataformas.html"
     context_object_name = "plataformas"
     ordering = "fecha_lanzamiento"
+    paginate_by = 8
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
@@ -33,6 +34,7 @@ class ListaJuegosView(ListView):
     template_name = "juego/lista_juegos.html"
     context_object_name = "juegos"
     ordering = "nombre"
+    paginate_by = 8
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
@@ -63,6 +65,7 @@ class ListaJugadoresView(ListView):
     template_name = "jugador/lista_jugadores.html"
     context_object_name = "jugadores"
     ordering = "apodo"
+    paginate_by = 8
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)

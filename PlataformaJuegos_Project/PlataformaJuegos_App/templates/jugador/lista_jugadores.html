@@ -5,76 +5,80 @@
 
 {% block index %}
 
-<!-- <h1> Jugadores</h1>
+<div class="page-heading header-text">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12">
+        <h3>Jugadores</h3>
+        <span class="breadcrumb"><a href="/plataformas/">Inicio</a> > Jugadores</span>
+      </div>
+    </div>
+  </div>
+</div>
 
-{% for jugador in jugadores %}
+<div class="section trending">
+  <div class="container">
+    <h5 class = "filter-title">Filtrar página actual:</h5>
+    <ul class="trending-filter">
+      <li>
+        <a class="is_active" href="#!" data-filter="*">Show All</a>
+      </li>
+      <li>
+        <a href="#!" data-filter="Profesional">Profesional</a>
+      </li>
+      <li>
+        <a href="#!" data-filter="No profesional">No Profesional</a>
+      </li>
+    </ul>
+    <div class="row trending-box">
+      {% for jugador in jugadores %}
 
-    <h2>{{ jugador.nombre }}</h2>
-    <p>{{ jugador.apodo }}</p>
-    <p>{{ jugador.descripcion }}</p>
-    <p>{{ jugador.año_nacimiento }}</p>
-    {% if jugador.es_profesional %}
-        <p>{{ jugador.equipo }}</p>
-        <img src="{{jugador.logo_equipo}}" alt="logo equipo" width="100px" height="100px">
-    {% endif %}
-    <a href="{% url 'detalle_jugador' jugador.pk %}">Click aqui para ver el detalle de {{jugador.nombre}}</a>
 
-{% empty %}
-    <p>No hay Jugadores.</p>
-{% endfor %}
-
-<br><br>
-<a href="{% url 'home' %}"> Volver atrás </a> -->
-
-  <div class="page-heading header-text">
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-12">
-          <h3>Jugadores</h3>
-          <span class="breadcrumb"><a href="/plataformas/">Inicio</a> > Jugadores</span>
+      <div class="col-lg-3 col-md-6 align-self-center mb-30 trending-items col-md-6 adv">
+        <div class="item">
+          <div class="thumb">
+            <a href="{% url 'detalle_jugador' jugador.pk %}"><img class="portrait" src="{{jugador.foto_cara}}"
+                alt="foto cara" width="150px" height="150px"></a>
+          </div>
+          <div class="down-content">
+            {% if jugador.es_profesional %}
+            <span class="category">Profesional</span>
+            <p> <strong>{{jugador.equipo}}</strong> </p>
+            {%else%}
+            <span class="category">No profesional</span>
+            {%endif%}
+            <h4>{{ jugador.nombre }}</h4>
+            <p>{{jugador.descripcion}}</p>
+          </div>
         </div>
+      </div>
+
+      {% endfor %}
+    </div>
+    <div class="row">
+      <div class="col-lg-12">
+        <ul class="pagination">
+
+          {% if page_obj.has_previous %}
+          <li><a href="?page={{ page_obj.previous_page_number }}">&lt;</a></li>
+          {% endif %}
+
+          {% for num in page_obj.paginator.page_range %}
+          {% if num == page_obj.number %}
+          <li><a class="is_active">{{ num }}</a></li>
+          {% else %}
+          <li><a href="?page={{ num }}">{{ num }}</a></li>
+          {% endif %}
+          {% endfor %}
+
+          {% if page_obj.has_next %}
+          <li><a href="?page={{ page_obj.next_page_number }}">&gt;</a></li>
+          {% endif %}
+
+        </ul>
+
       </div>
     </div>
   </div>
 
-  <div class="section trending">
-    <div class="container">
-      <div class="row trending-box">
-        {% for jugador in jugadores %}
-
-
-        <div class="col-lg-3 col-md-6 align-self-center mb-30 trending-items col-md-6 adv">
-          <div class="item">
-            <div class="thumb">
-              <a href="{% url 'detalle_jugador' jugador.pk %}"><img class = "portrait"src="{{jugador.foto_cara}}" alt="foto cara" width="150px" height="150px"></a>
-              <!--<span class="price"><em>$36</em>$24</span>-->
-            </div>
-            <div class="down-content">
-              {% if jugador.es_profesional %}
-              <span class="category">Profesional</span>
-              <p> <strong>{{jugador.equipo}}</strong> </p>
-              {%else%}
-              <span class="category">No profesional</span>
-              {%endif%}
-              <h4>{{ jugador.nombre }}</h4>
-              <p>{{jugador.descripcion}}</p>
-            </div>
-          </div>
-        </div>
-
-        {% endfor %}
-      </div>
-    <div class="row">
-        <div class="col-lg-12">
-          <ul class="pagination">
-          <li><a href="#"> &lt; </a></li>
-            <li><a class="is_active" href="#">1</a></li>
-            <li><a href="#">2</a></li>
-            <li><a href="#">3</a></li>
-            <li><a href="#"> &gt; </a></li>
-          </ul>
-        </div>
-      </div>
-  </div>
-
-{% endblock %}
+  {% endblock %}
