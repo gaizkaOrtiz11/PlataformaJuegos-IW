@@ -1,5 +1,5 @@
 /* ==========================
-   <= 767px: ajustes generales
+   <= 767px
    ========================== */
 
 @media (max-width: 767px) {
@@ -15,7 +15,7 @@
 }
 
 /* ==========================
-   <= 992px: header, banner, CTA, page-heading
+   <= 992px
    ========================== */
 
 @media (max-width: 992px) {
@@ -50,7 +50,6 @@
     margin-bottom: 30px;
   }
 
-  /* CTA / MOST-PLAYED / PAGE HEADING */
   .cta::after,
   .most-played .main-button {
     display: none;
@@ -79,7 +78,7 @@
 }
 
 /* ==========================
-   HEADER / NAV móvil
+   HEADER
    ========================== */
 
 @media (max-width: 1200px) {
@@ -171,7 +170,7 @@
 }
 
 /* ==========================
-   BANNER responsive (<= 992px)
+   BANNER
    ========================== */
 
 @media (max-width: 992px) {
@@ -204,7 +203,7 @@
 }
 
 /* ==========================
-   JUEGOS EN TENDENCIA (lista dinámica)
+   JUEGOS EN TENDENCIA
    ========================== */
 
 @media (max-width: 1200px) {
@@ -244,7 +243,7 @@
 }
 
 /* ==========================
-   JUEGOS MÁS JUGADOS (lista dinámica)
+   JUEGOS MÁS JUGADOS
    ========================== */
 
 @media (max-width: 1400px) {
@@ -308,7 +307,7 @@
 }
 
 /* ==========================
-   CHATBOT RESPONSIVE FIXED
+   CHATBOT 
    ========================== */
 
 /* Tablets */
