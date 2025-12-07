@@ -22,6 +22,15 @@ document.addEventListener("DOMContentLoaded", function () {
     if (e.key === "Enter") { sendMessage(); }
   });
 
+  // Show messages in the chat
+  function appendMessage(sender, message) {
+    const msg = document.createElement("div");
+    msg.classList.add("message", sender);
+    msg.textContent = message;
+    chatbotMessages.appendChild(msg);  // Add div to the chat container
+  }
+
+
   // Send user's message
   function sendMessage() {
     const userMessage = chatbotInput.value.trim();  // Text inside the input
@@ -32,14 +41,6 @@ document.addEventListener("DOMContentLoaded", function () {
     getBotResponse(userMessage);
   }
 
-  // Show messages in the chat
-  function appendMessage(sender, message) {
-    const msg = document.createElement("div");
-    msg.classList.add("message", sender);
-    msg.textContent = message;
-    chatbotMessages.appendChild(msg);  // Add div to the chat container
-    chatbotMessages.scrollTop = chatbotMessages.scrollHeight;  // ALways see the las message
-  }
 
   // Show chat status (Escribiendo...)
   function setStatus(text) {
