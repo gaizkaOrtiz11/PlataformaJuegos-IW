@@ -14,10 +14,8 @@ async function loadCSV(filepath) {
             const values = lines[i].split(',').map(v => v.trim());
             const obj = {};
             
-            headers.forEach((header, index) => {
-                obj[header] = values[index];
-            });
-            
+            headers.forEach((header, index) => { obj[header] = values[index]; });
+
             data.push(obj);
         }
         return data;
@@ -48,7 +46,7 @@ function createTrendingGameHTML(game) {
     return `
             <div class="div_juegos_tendencia">
                 <div class="thumb">
-                    <a href="{% url 'https://42matters.com/most-popular-mobile-games-spain' %}"> <img src="${game.picture}" alt="${game.title}"> </a>
+                    <a href="https://42matters.com/most-popular-mobile-games-spain"> <img src="${game.picture}" alt="${game.title}"> </a>
                     <span class="rank-badge-trending">#${game.rank}</span>
                 </div>
                 <div class="down-content">
@@ -120,7 +118,7 @@ async function loadMostPlayedGames() {
 
     // Error if there isn't a container
     if (!container) {
-        console.error(' Contenedor "most-played-games-container" no encontrado');
+        console.error('Contenedor "most-played-games-container" no encontrado');
         return;
     }
     
