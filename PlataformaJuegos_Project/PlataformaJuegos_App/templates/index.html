@@ -77,7 +77,7 @@
                                 <img src="{% static 'assets/images/featured-04.png' %}" alt="Icono de la sección de noticias">
                             </div>
                             <h4>{% trans "Noticias" %}</h4>
-                        </div>
+                        </div>  
                     </a>
                 </div>
             </div>
@@ -97,15 +97,13 @@
                 <div id="chatbot-header">
                     <span>{% trans "Chatbot Deusti" %}</span>
                 </div>
+                
                 <div id="chatbot-body">
                     <div id="chatbot-messages"></div>
                 </div>
 
                 <div id="chatbot-input-container">
-                    <input
-                        type="text"
-                        id="chatbot-input"
-                        placeholder="{% trans 'Escribe un mensaje...' %}">
+                    <input type="text" id="chatbot-input" placeholder="{% trans 'Escribe un mensaje...' %}">
                     <button id="send-btn">{% trans "Enviar" %}</button>
                 </div>
             </div>
