@@ -1,9 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900");
 
-/* ==========================
-   RESET BÁSICO
-   ========================== */
-
 * {
   margin: 0;
   padding: 0;
@@ -18,10 +14,6 @@ li {
   padding: 0;
   list-style: none;
 }
-
-/* ==========================
-   TIPOGRAFÍA / BASE
-   ========================== */
 
 html,
 body {
@@ -65,24 +57,11 @@ p {
   color: #727272;
 }
 
-/* ==========================
-   IMÁGENES
-   ========================== */
-
 img {
   width: 100%;
   object-fit: cover;
   overflow: hidden;
 }
-
-img.smallLogo {
-  width: 50px;
-}
-
-
-/* ==========================
-   GLOBAL LAYOUT / SECCIONES
-   ========================== */
 
 .section {
   margin-top: 120px;
@@ -108,11 +87,6 @@ img.smallLogo {
   text-transform: uppercase;
 }
 
-
-/* ==========================
-   BANNER (TEXTOS)
-   ========================== */
-
 .banner-left .caption h6 {
   color: #8ec5f3;
   font-size: 30px;
@@ -126,11 +100,6 @@ img.smallLogo {
 .banner-left .caption p {
   color: #fff !important;
 }
-
-
-/* ==========================
-   BOTONES PRINCIPALES
-   ========================== */
 
 .main-button a {
   display: inline-block;
