@@ -37,6 +37,7 @@
             {%else%}
             <li><span>Es profesional:</span> NO</li>
             {%endif%}
+            <li><span>Juego principal:</span><a href="{% url 'detalle_juego' jugador.juego.pk %}">{{jugador.juego}}</a> </li>
           </ul>
         </div>
         <div class="col-lg-12">
