@@ -18,20 +18,26 @@
 
 <div class="section trending">
   <div class="container">
-    <h5 class = "filter-title">Filtrar página actual:</h5>
+    <h5 class="filter-title">Filtrar página actual:</h5>
     <ul class="trending-filter">
       <li>
-        <a class="is_active" href="#!" data-filter="*">Show All</a>
+        <a class="{% if not request.GET.tipo %}is_active{% endif %}" href="{% url 'lista_jugadores' %}">
+          Show All
+        </a>
       </li>
       <li>
-        <a href="#!" data-filter="Profesional">Profesional</a>
+        <a class="{% if request.GET.tipo == 'profesional' %}is_active{% endif %}" href="?tipo=profesional">
+          Profesional
+        </a>
       </li>
       <li>
-        <a href="#!" data-filter="No profesional">No Profesional</a>
+        <a class="{% if request.GET.tipo == 'no_profesional' %}is_active{% endif %}" href="?tipo=no_profesional">
+          No Profesional
+        </a>
       </li>
     </ul>
     <div class="row trending-box">
-      {% for jugador in jugadores %}
+      {% for jugador in page_obj %}
 
 
       <div class="col-lg-3 col-md-6 align-self-center mb-30 trending-items col-md-6 adv">
@@ -60,22 +66,37 @@
         <ul class="pagination">
 
           {% if page_obj.has_previous %}
-          <li><a href="?page={{ page_obj.previous_page_number }}">&lt;</a></li>
+          <li>
+            <a
+              href="?{% if request.GET.tipo %}tipo={{ request.GET.tipo }}&{% endif %}page={{ page_obj.previous_page_number }}">
+              &lt;
+            </a>
+          </li>
           {% endif %}
 
           {% for num in page_obj.paginator.page_range %}
           {% if num == page_obj.number %}
           <li><a class="is_active">{{ num }}</a></li>
           {% else %}
-          <li><a href="?page={{ num }}">{{ num }}</a></li>
+          <li>
+            <a href="?{% if request.GET.tipo %}tipo={{ request.GET.tipo }}&{% endif %}page={{ num }}">
+              {{ num }}
+            </a>
+          </li>
           {% endif %}
           {% endfor %}
 
           {% if page_obj.has_next %}
-          <li><a href="?page={{ page_obj.next_page_number }}">&gt;</a></li>
+          <li>
+            <a
+              href="?{% if request.GET.tipo %}tipo={{ request.GET.tipo }}&{% endif %}page={{ page_obj.next_page_number }}">
+              &gt;
+            </a>
+          </li>
           {% endif %}
 
         </ul>
+
 
       </div>
     </div>

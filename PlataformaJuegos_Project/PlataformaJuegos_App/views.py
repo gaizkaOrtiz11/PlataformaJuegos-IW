@@ -46,6 +46,17 @@ class ListaJuegosView(ListView):
         except Juego.DoesNotExist:
             context["plataformas"] = []
         return context
+    
+    def get_queryset(self):
+        queryset = super().get_queryset()
+
+        pegi = self.request.GET.get("pegi")
+
+        if pegi:
+            queryset = queryset.filter(PEGI=pegi)
+
+        return queryset
+
 
 
 class DetalleJuegoView(DetailView):
@@ -72,6 +83,18 @@ class ListaJugadoresView(ListView):
         jugadores = self.get_queryset()
         context["apodos"] = ','.join([j.apodo for j in jugadores if j.apodo])
         return context
+    
+    def get_queryset(self):
+        queryset = super().get_queryset()
+        tipo = self.request.GET.get("tipo")
+
+        if tipo == "profesional":
+            queryset = queryset.filter(es_profesional=True)
+        elif tipo == "no_profesional":
+            queryset = queryset.filter(es_profesional=False)
+
+        return queryset
+
 
 
 class DetalleJugadorView(DetailView):
