@@ -304,3 +304,8 @@ Detail view styles
   text-align: right;
   margin-top: 32px;
 }
+
+img.smallLogo {
+  width: 50px;
+  height: auto;
+}
